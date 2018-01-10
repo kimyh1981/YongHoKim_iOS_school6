@@ -1,6 +1,6 @@
 # Kim Yong Ho (김 용 호)
 
----
+
 
 ## Index
    * Who is Kim Yong Ho.
@@ -13,7 +13,7 @@
 * -
 * - 
 
-----
+
 ### 2. iOS Development Course Study Summary
 * 1st Week
 
