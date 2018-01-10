@@ -1,4 +1,4 @@
-#Kim Yong Ho (김 용 호)
+# Kim Yong Ho (김 용 호)
 
 --
 
@@ -8,13 +8,13 @@
    * Contact information.
 
 --
-###1. Who is Kim Yong Ho
+### 1. Who is Kim Yong Ho
 * To be written later.
 * -
 * - 
 
 --
-###2. iOS Development Course Study Summary
+### 2. iOS Development Course Study Summary
 * 1st Week
 
    > * [Comprehension of Computer](./Class/1Week/README.md)
