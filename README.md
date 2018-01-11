@@ -10,13 +10,13 @@
 
 ## 1. Who is Kim Yong Ho
 * To be written later.
-* -
-* - 
+* Do you want to know who am I? Wait until I am ready to open myself.
 
 
 ## 2. iOS Development Course Study Summary
 * 1st Week
 
-   > * [Comprehension of Computer](./Class/1Week/README.md)
-   > * [Brief Lesson : GIT & Excode](./Class/1Week/README.md)   
-   > * [Basic programming Grammer & Structure](./Class/1Week/README.md)
+   > * [Basic Comprehension of iOS](./Class/1Week/README.md)
+   > * [Brief Lesson : GIT Use & Excode](./Class/1Week/README.md)   
+   > * [Use of Xcode](./Class/1Week/README.md)
+   > * [Basic Grammar of Swift : Class, 변수, 함수](./Class/1Week/README.md)
