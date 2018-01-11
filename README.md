@@ -18,5 +18,5 @@
 
    > * [Basic Comprehension of iOS](./Class/1Week/README.md)
    > * [Brief Lesson : GIT Use & Excode](./Class/1Week/README.md)   
-   > * [Use of Xcode](./Class/1Week/README.md)
+   > * [Use of Xcode & Basic of OOP(Object-Oriented Programming)](./Class/1Week/README.md)
    > * [Basic Grammar of Swift : Class, 변수, 함수](./Class/1Week/README.md)
