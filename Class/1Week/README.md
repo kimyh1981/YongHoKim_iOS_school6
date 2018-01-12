@@ -81,6 +81,9 @@
 
 **8) Class 사용하기 실습**
 
-[![Class 이용 코딩](/Class 이용 코딩.png)]
+[![Class 이용 코딩]
+<img width="749" alt="class" src="https://user-images.githubusercontent.com/35207209/34871751-20c6b578-f7d2-11e7-973f-ba4618f88644.png">
 
-[![Class에 대한 ViewController실행](/Class에 대한 ViewController실행.png)]
+
+[![Class에 대한 ViewController실행]
+<img width="746" alt="class viewcontroller" src="https://user-images.githubusercontent.com/35207209/34871829-52224f10-f7d2-11e7-9268-ce1a5cf77359.png">
