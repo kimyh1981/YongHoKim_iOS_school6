@@ -4,14 +4,31 @@ import UIKit
 
 //<기초>
 //1-a 이름(문자열)을 받아서 이름을 출력하는 함수
-func printName(name: String){
-    print (name)
+func printName(name:String){
+    print(name)
+}
+func printName() -> String{
+    return "name"
+}
+func printName(name1:String = "YongHo"){
+    print("My name is \(name1)")
 }
 //1-b 나이*(정수)를 받아서 나이를 출력하는 함수
+func printAge(age:Int){
+    print(age)
+}
 //1-c.이름과 주소를 입력받아 자기소개글을 프린트 하는 함수(자기소개글은 자유)
-//정수를 하나 입력받아서 2로 나눈 값을 반환해주는 함수
+func printSelfIntroduction(name:String, address:String){
+    print("My name is \(name) and I live in \(address)")
+}
+//정수를 하나 입력받아서 2로 나눈 값을 반환해주는 함수 (1/2는 0.5인데 왜 return값 타입을 Double로 안되지?)
+func multipleNum(num:Int) -> Int{
+    return num / 2
+}
 //정수를 하나 입력받아서 제곱을 반환해주는 함수
-
+func doubleNum(num:Int) -> Int{
+    return num * num
+}
 
 
 //<응용 - 다중 입력, 반환>
