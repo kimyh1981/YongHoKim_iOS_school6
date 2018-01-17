@@ -18,7 +18,7 @@ func scoreSwitch(score:Int) -> String{
     }
     return grade
 }
-print(scoreSwitch(score: 90))
+print(scoreSwitch(score: 50))
 
 
 //2. Switch + tuple 넓이 구하는 함수
@@ -81,21 +81,41 @@ func changeMonthNumToEng(MonthNum:Int) -> String{
 print(changeMonthNumToEng(MonthNum: 12))
 
 //3-2. 년/월을 입력받아 해당 달의 마지막 날을 반환 해주는 함수(윤년 고려)
-func checkLastDayOfMonth(year:Int, month:Int){
-    if (year%4 == 0){
-        
+//func checkLastDayOfMonth(year:Int, month:Int){
+//    if (year%4 == 0){
+//
+//    }
+//}
+    //윤년 4 & 400년으로 나눠서 떨어져야 함
+    //윤달은 4년에 한번 옴 (29일 있는 달이 윤달임/2016년이 윤달이었음)
+    // 1,3,5,7,8,10,12월은 31일씩 나머지는 30일
+
+
+
+
+//4. if문 변환
+//4-1. 시험점수를 입력받아 대학교 grade로 나눠서 반환해주는 함수 (ex: 95 >>> "A+"  /// 80 >>> "B")
+func changeScoreToGrade (Score:Double) -> String{
+    var changeScore:String = String(Score)
+    switch Score {
+    case 4.5:
+        changeScore = "A+"
+    case 4.0...4.4:
+        changeScore = "A"
+    case 3.5...3.9:
+        changeScore = "B+"
+    case 3.0...3.4:
+        changeScore = "B"
+    case 2.5...2.9:
+        changeScore = "C"
+    default:
+        changeScore = "F"
     }
+    return changeScore
 }
+print(changeScoreToGrade(Score: 4.0))
 
-//윤년 4 & 400년으로 나눠서 떨어져야 함
-//윤달은 4년에 한번 옴 (29일 있는 달이 윤달임/2016년이 윤달이었음)
-// 1,3,5,7,8,10,12월은 31일씩 나머지는 30일
-
+//4-2. 도형 부피 구하기 함수
 
 
-
-//if문 변환
-//시험점수를 입력받아 대학교 grade로 나눠서 반환해주는 함수 (ex: 95 >>> "A+"  /// 80 >>> "B")
-
-//도형 부피 구하기 함수
-//도형 넓이 구하기 함수
+//4-3. 도형 넓이 구하기 함수
