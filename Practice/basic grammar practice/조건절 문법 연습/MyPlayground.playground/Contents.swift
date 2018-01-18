@@ -133,15 +133,25 @@ func checkLeapYear (year:Int){
 }
 checkLeapYear(year: 2018)
 
-//세 수를 입력받아 그 곱이 양수이면 true, 0 혹은 음수이면 false, 둘 다 아니면 에러를 발생시키는 함수를 작성하세요.
-func checkPlusNum(num1:Int, num2:Int, num3:Int){
-    if num1 * num2 * num > 0 {
-        
-    }
-    
-    
-    
-    
-    
-}
+////세 수를 입력받아 그 곱이 양수이면 true, 0 혹은 음수이면 false, 둘 다 아니면 에러를 발생시키는 함수를 작성하세요.
+//func checkPlusNum(num1:Int, num2:Int, num3:Int){
+//    if num1 * num2 * num > 0 {
+//
+//    }
+//
+//
+//
+//
+//
+//}
 
+func test(num:Int) -> Int{
+    var sum: Int = 0
+    if num == 1{
+        return 1
+    }else{
+        sum = num + test(num-1)
+        return sum}
+    }
+}
+test(num: 5)
