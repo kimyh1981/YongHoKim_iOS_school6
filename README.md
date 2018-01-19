@@ -22,10 +22,10 @@
    > * [Basic Grammar of Swift : Class, 변수, 함수](./Class/1Week/README.md)
    
 * 2nd Week - Swift programming language
-   > * [Making a calculator practice](./Class/2Week/README.md)
-   > * [Swift Grammar Basic & Practice - Func & Var](./Class/2Week/Swift Grammar Basic & Practice - Func & Var.md)
-   > * [Swift Grammar Basic & Practice - Conditionals](./Class/2Week/Swift Grammar Basic & Practice - Conditionals.md)
-   > * [Swift Grammar Basic & Practice - Loops](./Class/2Week/Swift Grammar Basic & Practice - Loops.md)
-   > * [Swift Grammar Basic & Practice - Collection Types](./Class/2Week/Swift Grammar Basic & Practice - Collection Types.md)
+   > * [Making a calculator practice](./Class/2Week/0.MakingACalculatorPractice.md)
+   > * [Swift Grammar Basic & Practice - Func & Var](./Class/2Week/1.SwiftGrammarBasic&Practice-Func&Var.md)
+   > * [Swift Grammar Basic & Practice - Conditionals](./Class/2Week/2.SwiftGrammarBasic&Practice-Conditionals.md)
+   > * [Swift Grammar Basic & Practice - Loops](./Class/2Week/3.SwiftGrammarBasic&Practice-Loops.md)
+   > * [Swift Grammar Basic & Practice - Collection Types](./Class/2Week/4.SwiftGrammarBasic&Practice-CollectionTypes.md)
    
   
