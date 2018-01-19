@@ -22,7 +22,7 @@
    > * [Basic Grammar of Swift : Class, 변수, 함수](./Class/1Week/README.md)
    
 * 2nd Week - Swift programming language
-   > * [Making a calculator practice](./Class/2Week/Making a calculator practice.md)
+   > * [Making a calculator practice](./Class/2Week/README.md)
    > * [Swift Grammar Basic & Practice - Func & Var](./Class/2Week/Swift Grammar Basic & Practice - Func & Var.md)
    > * [Swift Grammar Basic & Practice - Conditionals](./Class/2Week/Swift Grammar Basic & Practice - Conditionals.md)
    > * [Swift Grammar Basic & Practice - Loops](./Class/2Week/Swift Grammar Basic & Practice - Loops.md)
