@@ -75,12 +75,69 @@ let formalGreeting = "Hello, \(fullName ?? nickName)"
 //Switchs support any kind of data and a wide variety of comparison operations-they aren't limited to integers and tests for equality.
 let vegetable = "red pepper"
 switch vegetable {
-case "onion":
-    print("This makes eyes cring.")
 case "상추":
-    print("I am sorry I can recall my memories how to spell vegetables")
+    print("This is not spicy.")
+case "배추":
+    print("This is an ingredient of KimChi.")
 case let x where x.hasSuffix("pepper"):
-    print("I love to eat \(x)s whenn I get stressed.")
+    print("\(x) is so spicy.")
 default:
-    print("Nothing to eat in the vegetables.")
+    print("I don't like a vegetable.")
 }
+//to use for-in with dictionaries.
+let randomNum = [
+    "Num1": [1,2,3,4,5],
+    "Num2": [1,2,3,4,5],
+    "Num3": [1,2,3,4,5],
+]
+var largestNum = 0
+for (_, numbers) in randomNum{
+    for number in numbers{
+        if number > largestNum{
+            largestNum = number
+        }
+    }
+}
+print(largestNum)
+//Use "while" to repeat a block of code until a condition changes. The condition of a loop can be at the end instead, ensuring that the loop is run at least once.
+var n = 2
+while n < 100{
+    n *= 2
+}
+print(n)
+// Use "..<" to make a range that omits its upper value, and use "..." to make a range that includes both values.
+var total = 0
+for i in 0..<11{
+    total += i
+}
+print(total)
+//3. Functions and Closures
+//Use func to declare a function. Call a function by following its name with a list of arguments in parentheses. Use -> to separate the parameter names and types form the function's return type.
+func greeting(person: String, day: String) -> String{
+    return "Hello \(person), today is \(day)."
+}
+greeting(person: "Kim", day: "Sunday")
+//By default, functions use their parameter names as labels for their arguments. Write a custom argument label before the parameter name, or write _ to use no argument label.
+func greet(_ person: String, _ day: String) -> String {
+    return "Hello \(person), today is \(day)."
+}
+print(greeting(person: "kim", day: "Modany"))
+//Use a tuple to make a compund value-for example, to return multiple values from a function. The elements of a tuple can be referred to either by name or by number.
+func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int){
+    var min = scores[0]
+    var max = scores[0]
+    var sum = 0
+    
+    for score in scores {
+        if score > max {
+            max = score
+        }else if score < min {
+            min = score
+        }
+        sum += score
+    }
+    return (min, max, sum)
+}
+let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+print(statistics.sum)
+print(statistics.0)
