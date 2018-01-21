@@ -127,17 +127,16 @@ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int){
     var min = scores[0]
     var max = scores[0]
     var sum = 0
-    
     for score in scores {
-        if score > max {
-            max = score
-        }else if score < min {
+        if score < min{
             min = score
+        }else if score > max{
+            max = score
         }
         sum += score
     }
-    return (min, max, sum)
+    return(min, max, sum)
 }
-let statistics = calculateStatistics(scores: [5, 3, 100, 3, 9])
+let statistics = calculateStatistics(scores: [0,1,2,3,4,5,6,6,7,-1])
 print(statistics.sum)
 print(statistics.0)
