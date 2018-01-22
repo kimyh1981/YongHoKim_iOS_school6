@@ -46,63 +46,128 @@ setTest()
 //}
 
 
-func dicTest(){
-    //기본 딕셔너리
-    var dic:[String:Any] = ["name":"yh", "age":20, "job":"Developer", "isSingle":true]
-    //딕셔너리 추가
-    dic.updateValue("Seojong", forKey: "address")
-    //딕셔너리 수정
-    dic.updateValue("Kim", forKey: "name")
-    //삭제
-    dic.removeValue(forKey: "isSingle")
-    
-    //값 불러오기
-    let introduce: String = "my name" + " is" + (dic["name"] as! String)
-    
-    let doubleage = (dic["age"] as! Int) * 2
-    for (key,value) in dic {
-        print("key값은\(key)이고","value값은\(value)이다")
-    }
-}
-print(dicTest())
+//func dicTest(){
+//    //기본 딕셔너리
+//    var dic:[String:Any] = ["name":"yh", "age":20, "job":"Developer", "isSingle":true]
+//    //딕셔너리 추가
+//    dic.updateValue("Seojong", forKey: "address")
+//    //딕셔너리 수정
+//    dic.updateValue("Kim", forKey: "name")
+//    //삭제
+//    dic.removeValue(forKey: "isSingle")
+//
+//    //값 불러오기
+//    let introduce: String = ("my name" + " is" + (dic["name"] as! String)
+//
+//    let doubleage = (dic["age"] as! Int) * 2
+//    for (key,value) in dic {
+//        print("key값은\(key)이고","value값은\(value)이다")
+//    }
+//}
+//print(dicTest())
 
 //배열
 
 //Level 1
 //시작과 끝수를 받아서 두 수 사이의 모든 수를 가지고 있는 배열 만들기
-func makelist(startNum:Int, endNum:Int) -> [Int]{
-    var returnList: [Int] = []
-    for n in startNum...endNum{
-        returnList.append(n)
-    }
-    return returnList
-}
-print(makelist(startNum: 1, endNum: 10))
+//func makelist(startNum:Int, endNum:Int) -> [Int]{
+//    var returnList: [Int] = []
+//    for n in startNum...endNum{
+//        returnList.append(n)
+//    }
+//    return returnList
+//}
+//print(makelist(startNum: 1, endNum: 10))
+
+//while
+//    var returnList: [Int] = []
+//    var index:Int = startNum
+//    while index < endNum{
+//        returnList.append(index)
+//        index += 1
+//    }
+//print(makelist(startNum: 1, endNum: 10)
 
 //정수 타입의 배열을 입력받아 모든 배열의 수의 합을 리턴하는 함수
-var list: [Int] = [1,3,5,7,9]
-func sumAllList(numlist: [Int]) -> Int{
-    var sumList: Int = 0
-    for n in numlist{
-        sumList += n
-    }
-    return sumList
-}
-print(sumAllList(numlist:list))
+//var list: ([Int]) = [1,3,5,7,9]
+//func sumAllList(numlist: [Int]) -> Int{
+//    var sumList: Int = 0
+//    for n in numlist{
+//        sumList += n
+//    }
+//    return sumList
+//}
+//print(sumAllList(numlist:list))
 
 //딕셔너리에 있는 모든 데이터 출력하는 함수 >> 데이터: ["name":"joo", "age":20, "job":"Developer"]
-
+//func printDic(_ dictionary:[String:Any]){
+//    for (key, value) in dictionary{
+//        print(key, value)
+//    }
+//}
+//printDic(_ dictionary: ["name":"Kim", "age":"38"])
 
 
 
 
 //Level 2
 //정수 타입의 배열을 받아서 배열안의 중복된 수를 모두 제거된 배열을 반환하는 함수
+//func removeDuplicate(of list:[Int]) -> [Int]{
+//    var resultList:[Int] = []
+//
+//    for n in list {
+//        if !resultList.contains(n)
+//        {
+//            resultList.append(n)
+//        }
+//    }
+//    return resultList
+//}
+//removeDuplicate(of: 12)
+
 //정수 배열을 입력받아, 배열의 요소 중 두 개를 선택하는 조합을 모두 포함하는 배열을 작성하세요.
 //>> [1, 2, 3] -> [[1, 2], [1, 3], [2, 3]]
+//func saperate(list:[Int]) -> [[Int]]{
+//    var resultList:[[Int]] = []
+//    for n in 0..<list.count{
+//        var firstV = list[n]
+//        for i in n+1..<list.count{
+//            let secondV = list[i]
+//            resultList.append([firstV,secondV])
+//        }
+//    }
+//}
+//print(saperate(list: [1,2,3,4,5]))
 
 //Level 3
 //정수 타입의 배열을 입력받아서 오름차순으로 정렬된 배열을 만들어 리턴하시오.(정렬 함수 사용x)   (정렬의 효율은 보지 않습니다.)
+func selectSort(list:[Int]) -> [Int]{
+    var mutatedList = list
+
+    for originIndex in 0..<mutatedList.count{
+        
+        var minimumNum = mutatedList[originIndex]
+        var minimumIndex = originIndex
+        
+        for selectIndex in (originIndex+1)..<mutatedList.count{
+            let selectedNum = mutatedList[selectIndex]
+            if minimumNum > selectedNum{
+                minimumNum = selectedNum
+                minimumIndex = selectIndex
+            }
+        }
+        if originIndex != minimumIndex{
+            mutatedList.swapAt(originIndex, minimumIndex)
+        }
+    }
+    return mutatedList
+}
+print(selectSort(list: [2,3,1,7,8,9]))
+
+
+
+
+
 //>>에라토스테체 알고리즘을 이용하여  입력된 숫자까지의 모든 소수의 배열을 반환하는 함수
 
 
