@@ -140,3 +140,47 @@ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int){
 let statistics = calculateStatistics(scores: [0,1,2,3,4,5,6,6,7,-1])
 print(statistics.sum)
 print(statistics.0)
+//functions can be nested. Nested functions have access to variables that were declared in the outer function. You can use nested functions to organize  the code in a function that is long or complex.
+func returnFifteen() -> Int {
+    var y = 10
+    func add() {
+        y += 5
+    }
+    add()
+    return y
+}
+print(returnFifteen())
+//Functions are a first-class type. This means that a function can return another function as its value.
+func makeIncrementer() -> ((Int) -> Int){
+    func addOne(number: Int) -> Int {
+        return 1 + number
+    }
+    return addOne
+}
+var increment = makeIncrementer()
+print(increment(10))
+//A function can take another function as one of its arguments.
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+    for item in list {
+        if condition(item) {
+            return true
+        }
+    }
+    return false
+}
+func lessThanTen(number: Int) -> Bool {
+    return number < 10
+}
+var numbers = [20, 19, 7, 12]
+hasAnyMatches(list: numbers, condition: lessThanTen)
+//Fucntions are actuallly a special case of closures: blocks of code that can be called later.The code is a closure has access to things like variables and functions that were available in the scope where the closure was clreated, even if the closure is in a different scope when it is executed-you saw an example of this alreay with nested functions. You can write a closure without a name by surrounding code with braces({}). Use in to separate the arguments and return type from the body.
+numbers.map({ (number: Int) -> Int in
+    let result = 3 * number
+    return result
+})
+//You have several options for writing closures more concisely. When a closure's type is already known. such as the callback for a delegate, you can omit the type of its parameters, its return type, or both. Single statement closure implicitly return the value of their only statement.
+let mappedNumbers = numbers.map({ number in 3 * number})
+print(mappedNumbers)
+//You can refer to parameters by number instead of by name-this approach is especially useful in very short closures. A closure passed as the last argument to a function can appear immediately after the parentheses. When a closure is the only argument to a function, you can omit the parentheses entirely.
+let sortedNumbers = numbers.sorted { $0 > $1 }
+print(sortedNumbers)
