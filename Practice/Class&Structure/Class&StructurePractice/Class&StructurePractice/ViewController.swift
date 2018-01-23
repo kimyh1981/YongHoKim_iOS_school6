@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     let cal = Calculator()
 
     override func viewDidLoad() {
+        //다른 함수들을 호출하거나(Class A), 메소들을 호출(Run "A")하거나, 인스턴스 생성(a = A())
         super.viewDidLoad()
         
         let mazingaZ = Person(name: "마징가Z", gender: "남성", major: "초딩")
