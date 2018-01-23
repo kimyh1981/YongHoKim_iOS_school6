@@ -18,17 +18,17 @@ class Calculator {
             totalScore += n.score
         }
         let average = Double(totalScore) / Double(allSubject.count)
-        print("\(student.name)sms wjsrhddms\(student.major)dlrh, vudrbsdms\(average)입니다.")
+        print("\(student.name)는 전공은 \(student.major)이고, 평균은\(average)입니다.")
     }
     //가장 싸움을 잘하는 아이는?
     func jjang(_ student:Person...){
         var jjangName: String = ""
         var maxPower: Int = 0
         for person in student {
-            var challengerPower = person.power()
+            let challengerPower = person.power()
             //과목들 중에서 싸움을 찾아서 싸움의 파워를 가져오기
             if maxPower < challengerPower {
-                maxpower = challengerPower
+                maxPower = challengerPower
                 jjangName = person.name
             }
             
@@ -48,7 +48,7 @@ class Calculator {
             diffScore = stu1IQ - stu2IQ
         }else{
             geniusPerson = stu2
-            diffScore = stu1IQ - stu2IQ
+            diffScore = stu2IQ - stu1IQ
         }
         print("\(geniusPerson!.name)의 산수 점수가 \(diffScore)점 더 높기 때문에 더 똑똑 합니다.")
     }

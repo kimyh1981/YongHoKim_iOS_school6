@@ -46,3 +46,25 @@ tenEighty.frameRate
 anotherTeneighty.frameRate
 
 
+var name: String = "Kim"
+var reName: String = "Lee"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

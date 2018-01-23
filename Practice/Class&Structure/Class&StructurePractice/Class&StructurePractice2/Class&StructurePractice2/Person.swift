@@ -38,14 +38,13 @@ class Person {
         }
     return 0
     }
- 
     
-    
-    
-    
-    
-    
-    
-    
-    
+    func getIQ() -> Int {
+        for subject in subject {
+            if subject.name == "산수" {
+                return subject.score
+            }
+        }
+    return 0
+    }
 }
