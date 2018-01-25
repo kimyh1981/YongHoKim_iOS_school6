@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Class&StructurePractice
+//  Optional
 //
-//  Created by KimYong Ho on 2018. 1. 22..
+//  Created by KimYong Ho on 2018. 1. 25..
 //  Copyright © 2018년 KimYong Ho. All rights reserved.
 //
 

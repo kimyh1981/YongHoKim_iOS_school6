@@ -153,19 +153,7 @@ func roundUp(number:Double) -> Int{
 }
 print(roundUp(number: 5.5))
 
-//for 문
-//123 받아서 각 자리수를 더해서 6나오게 하기
-func addAll(num: Int) -> Int {
-    var tempNum: Int = num
-    var sumNum: Int = 0
-    while tempNum > 0 {
-        let lastNum:Int = tempNum % 10
-        sumNum += lastNum
-        tempNum /= 10
-    }
-    return sumNum
-}
-print(addAll(num: 1))
+
 
 
 
