@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var viewList: [UIView] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,10 +55,35 @@ class ViewController: UIViewController {
 //        subView2.backgroundColor = UIColor.green
 //        subView1.addSubview(subView2)
 //
+        
+        //뷰리스트 만들기
+        viewList = makeViewList(num: 9)
+        //프레임 변경
+        updateFrameForCollection(for: viewList, colum: 3)
+        //섭뷰 추가
+        addSubview(list: viewList)
+        
     }
     
     
 // UIView가 어디서 온것인지? 화면에 보여지기 위해서 어떻게 해야 하는지? 왜 addSubView를 하는지? frame은 어떻게 형성 되는지? 좌표의 이용 등
+    
+    
+    
+    
+    func updateFrameForCollection(for list: [UIView], colum: Int){
+        for index in 0..<list.count{
+            let col = index % colum
+            let row = index / colum
+            
+            let width:CGFloat = (self.view.bounds.size.width - 20) / CGFloat(colum)
+            
+            list[index].frame = CGRect(x: 10 + CGFloat(col) * width, y: 150 + CGFloat(row) * width, width: width, height: width)
+        }
+    }
+    
+    
+    
     func makeViewList(num: Int) -> [UIView] {
         var viewList: [UIView] = []
         for number in 0..<num {
@@ -104,6 +130,9 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -112,4 +141,5 @@ class ViewController: UIViewController {
 
 
 }
+
 

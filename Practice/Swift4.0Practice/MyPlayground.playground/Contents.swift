@@ -15,7 +15,9 @@ default:
 for i in 0...5 {
     if i % 2 == 0 {
         print(i)
+        continue
     }
+    print("홀수는 \(i)")
 }
 
 let helloSwift: String = "Hello Swift!"
