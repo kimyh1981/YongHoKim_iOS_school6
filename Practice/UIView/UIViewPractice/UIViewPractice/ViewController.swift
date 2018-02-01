@@ -76,13 +76,11 @@ class ViewController: UIViewController {
             let col = index % colum
             let row = index / colum
             
-            let width:CGFloat = (self.view.bounds.size.width - 20) / CGFloat(colum)
+            let width: CGFloat = (self.view.bounds.size.width - 20) / CGFloat(colum)
             
             list[index].frame = CGRect(x: 10 + CGFloat(col) * width, y: 150 + CGFloat(row) * width, width: width, height: width)
         }
     }
-    
-    
     
     func makeViewList(num: Int) -> [UIView] {
         var viewList: [UIView] = []
@@ -94,7 +92,6 @@ class ViewController: UIViewController {
         }
         return viewList
     }
-    
     
     func updateFrame(for list: [UIView]) {
         for index in 0..<list.count {
@@ -124,16 +121,13 @@ class ViewController: UIViewController {
     func addSubview(list:[UIView]) {
         for index in 0..<list.count {
             if index == 0 {
-                list[index].addSubview(list[index])
+                view.addSubview(list[index])
             } else {
                 list[index-1].addSubview(list[index])
             }
         }
     }
     
-
-    
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
