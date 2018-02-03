@@ -79,7 +79,43 @@ print("firend's age: \(friendInfo.age)")
 changePersonInfo(kim)
 print("kim's height: \(kim.height)")
 
+//저장 프로퍼티의 선언 및 인스턴스 생성
+struct CoordinatePoint {
+    var x: Int
+    var y: Int
+}
+let locationOfTarget: CoordinatePoint = CoordinatePoint.init(x: 10, y: 5)
 
+class Position {
+    var point: CoordinatePoint
+    let name: String
 
+    init(name: String, currentPoint: CoordinatePoint) {
+        self.point = currentPoint
+        self.name = name
+    }
+}
+let kimPosition: Position = Position.init(name: "Kim", currentPoint: locationOfTarget)
+
+//저장 프로퍼티의 초깃값 지정
+struct CoordinatePoint {
+    var x: Int = 1
+    var y: Int = 1
+}
+
+let kimPoint: CoordinatePoint = CoordinatePoint()
+let wizplanPoint: CoordinatePoint = CoordinatePoint(x: 10, y: 5)
+
+print("kim's Point: \(kimPoint.x), \(kimPoint.y)")
+print("wizplan's Point:) \(wizplanPoint.x), \(wizplanPoint.y)")
+
+class Position {
+    var point: CoordinatePoint = CoordinatePoint()
+    var name: String = "Unknow"
+}
+let kimPosition: Position = Position()
+
+kimPosition.point = kimPoint
+kimPosition.name = "kim"
 
 

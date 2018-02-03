@@ -50,11 +50,11 @@ class ViewController: UIViewController {
         
         midTextLb = UILabel(frame: CGRect(x: 12.5, y: 420, width: 350, height: 40))
         midTextLb.text = "Love yourself first."
-        midTextLb.textColor = .white
+        midTextLb.textColor = .black
         midTextLb.font = UIFont.systemFont(ofSize: 25)
         midTextLb.numberOfLines = 0
         midTextLb.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
-        midTextLb.alpha = 0.2
+        midTextLb.alpha = 0.5
         midTextLb.textAlignment = NSTextAlignment.center
         view.addSubview(midTextLb)
         
