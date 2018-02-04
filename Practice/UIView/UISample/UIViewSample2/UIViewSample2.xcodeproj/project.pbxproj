@@ -18,7 +18,7 @@
 		7A2558A92024022400C55BA2 /* NanumBarunGothicUltraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A2558A42023FBD900C55BA2 /* NanumBarunGothicUltraLight.ttf */; };
 		7A2558AA2024022600C55BA2 /* NanumGothicBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A2558A52024011D00C55BA2 /* NanumGothicBold.ttf */; };
 		7A2558AC2024152500C55BA2 /* MyCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2558AB2024152500C55BA2 /* MyCustomView.swift */; };
-		7A2558CC202429A200C55BA2 /* Sample1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2558CB202429A200C55BA2 /* Sample1.swift */; };
+		7A2558CC202429A200C55BA2 /* MyCustomView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2558CB202429A200C55BA2 /* MyCustomView2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,7 @@
 		7A2558A42023FBD900C55BA2 /* NanumBarunGothicUltraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumBarunGothicUltraLight.ttf; sourceTree = "<group>"; };
 		7A2558A52024011D00C55BA2 /* NanumGothicBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumGothicBold.ttf; sourceTree = "<group>"; };
 		7A2558AB2024152500C55BA2 /* MyCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomView.swift; sourceTree = "<group>"; };
-		7A2558CB202429A200C55BA2 /* Sample1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample1.swift; sourceTree = "<group>"; };
+		7A2558CB202429A200C55BA2 /* MyCustomView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomView2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,8 @@
 			children = (
 				7A25588F2023F2EF00C55BA2 /* AppDelegate.swift */,
 				7A2558912023F2EF00C55BA2 /* ViewController.swift */,
-				7A2558CB202429A200C55BA2 /* Sample1.swift */,
 				7A2558AB2024152500C55BA2 /* MyCustomView.swift */,
+				7A2558CB202429A200C55BA2 /* MyCustomView2.swift */,
 				7A2558932023F2EF00C55BA2 /* Main.storyboard */,
 				7A2558962023F2EF00C55BA2 /* Assets.xcassets */,
 				7A2558982023F2EF00C55BA2 /* LaunchScreen.storyboard */,
@@ -165,7 +165,7 @@
 				7A2558922023F2EF00C55BA2 /* ViewController.swift in Sources */,
 				7A2558AC2024152500C55BA2 /* MyCustomView.swift in Sources */,
 				7A2558902023F2EF00C55BA2 /* AppDelegate.swift in Sources */,
-				7A2558CC202429A200C55BA2 /* Sample1.swift in Sources */,
+				7A2558CC202429A200C55BA2 /* MyCustomView2.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
