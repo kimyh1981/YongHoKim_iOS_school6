@@ -49,12 +49,18 @@ class ViewController: UIViewController {
         
     }
     
-    @objc func buttonAction(_ sender: UILabel) {
-        print("첫번째 아이템이 클릭되었습니다.")
+    func buttonAction(_ texLb: UILabel) -> Bool {
+        if customView0.tag == 0 {
+            print("첫번째 아이템이 클릭 되었습니다.")
+        } else if customView1.tag == 1 {
+            print("두번째 아이템이 클릭 되었습니다.")
+        } else if customView2.tag == 2 {
+            print("세번째 아이템이 클릭 되었습니다.")
+        } else if customView3.tag == 3 {
+            print("네번째 아이템이 클릭 되었습니다.")
+        }
+        return true
     }
-    
-    
-    
     
 
 
