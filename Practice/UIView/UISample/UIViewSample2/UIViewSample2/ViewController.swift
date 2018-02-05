@@ -50,7 +50,6 @@ class ViewController: UIViewController {
     }
     
     @objc func buttonAction(_ sender: UILabel) {
-        let textValue:
         print("첫번째 아이템이 클릭되었습니다.")
     }
     
