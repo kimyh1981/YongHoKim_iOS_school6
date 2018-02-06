@@ -120,3 +120,67 @@ func harshad(num:Int) -> Bool{
     }
 }
 harshad(num: 1234)
+
+func interSwitch(count: Int) {
+    let countedThings = "moons orbiting Seturn."
+    let naturalCount: String
+    switch count {
+    case 0:
+        naturalCount = "no"
+    case 1..<5:
+        naturalCount = "a few"
+    case 5..<12:
+        naturalCount = "several"
+    case 12..<100:
+        naturalCount = "dozens of"
+    case 100..<1000:
+        naturalCount = "hundreds of"
+    default:
+        naturalCount = "many"
+    }
+    print("There are \(naturalCount) \(countedThings)")
+}
+interSwitch(count: 4)
+
+func getPoint(somePoint: (Int, Int)) {
+    switch somePoint {
+    case (0, 0):
+        print("\(somePoint) is at the origin.")
+    case(let x, 0):
+        print("on the x-axis with an x value of \(x)")
+    case(0, let y):
+        print("on the y-axis with an y value of \(y)")
+    case(-2...2, -2...2):
+        print("\(somePoint) is inside the box")
+    default:
+        print("\(somePoint) is outside of the box")
+    }
+}
+getPoint(somePoint: (0, 0))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

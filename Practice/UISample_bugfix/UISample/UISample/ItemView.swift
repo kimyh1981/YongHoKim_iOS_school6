@@ -14,6 +14,7 @@ class ItemView: UIView {
     private var titleLable:UILabel?
     private var descriptionLabel:UILabel?
     private var actionBtn:UIButton?
+    var delgate:ItemViewDelegate
     
     var index:Int = 0
     {
@@ -61,8 +62,11 @@ class ItemView: UIView {
     convenience init() {
         self.init(frame: CGRect.zero)
     }
+    var name: String = "이름없음"
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.name = name
+        }
         createView()
         updateLayout()
     }
@@ -87,6 +91,7 @@ class ItemView: UIView {
         titleLable = UILabel()
         titleLable!.font = UIFont.systemFont(ofSize: 22)
         titleLable!.textColor = UIColor.white
+        titleLable!.text = self.name
         titleLable!.textAlignment = .center
         self.addSubview(titleLable!)
         
@@ -100,6 +105,8 @@ class ItemView: UIView {
         self.addSubview(actionBtn!)
         
     }
+@objc func btnAction(_ sender: UIButton) {
+    delegate?.didSelected
     
     private func updateLayout()
     {
@@ -112,3 +119,12 @@ class ItemView: UIView {
 //        actionBtn?.frame = self.bounds
     }
 }
+
+protocol ItemViewDelegate {
+    func itemName() -> String
+    @objc optional func didSelectedItem(_ item: ItemView)
+}
+
+
+
+

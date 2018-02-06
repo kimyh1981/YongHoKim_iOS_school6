@@ -24,42 +24,29 @@ class ViewController: UIViewController {
         customView0 = MyCustomView(frame: CGRect(x: 0, y: 0, width: 150, height: 150))
         customView0.textLb.text = "첫번째"
         customView0.tag = 0
-        customView0.addTarget(self, action: #selector(self.buttonAction(_:)), for: .touchUpInside)
         self.view.addSubview(customView0)
         
         customView1 = MyCustomView(frame: CGRect(x: 200, y: 0, width: 150, height: 150))
         customView1.textLb.text = "두번째"
         customView1.tag = 1
-        customView1.addTarget(self, action: #selector(self.buttonAction(_:)), for: .touchUpInside)
         self.view.addSubview(customView1)
         
         customView2 = MyCustomView(frame: CGRect(x: 0, y: 200, width: 150, height: 150))
         customView2.textLb.text = "세번째"
         customView2.tag = 2
-        customView2.addTarget(self, action: #selector(self.buttonAction(_:)), for: .touchUpInside)
         self.view.addSubview(customView2)
         
         customView3 = MyCustomView(frame: CGRect(x: 200, y: 200, width: 150, height: 150))
         customView3.textLb.text = "네번째"
         customView3.tag = 3
-        customView3.addTarget(self, action: #selector(self.buttonAction(_:)), for: .touchUpInside)
         self.view.addSubview(customView3)
         
         
         
     }
     
-    func buttonAction(_ texLb: UILabel) -> Bool {
-        if customView0.tag == 0 {
-            print("첫번째 아이템이 클릭 되었습니다.")
-        } else if customView1.tag == 1 {
-            print("두번째 아이템이 클릭 되었습니다.")
-        } else if customView2.tag == 2 {
-            print("세번째 아이템이 클릭 되었습니다.")
-        } else if customView3.tag == 3 {
-            print("네번째 아이템이 클릭 되었습니다.")
-        }
-        return true
+    func buttonAction(_ texLb: UILabel) {
+ 
     }
     
 
