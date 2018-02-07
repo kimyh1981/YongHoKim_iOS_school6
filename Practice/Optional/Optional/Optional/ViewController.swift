@@ -8,41 +8,34 @@
 
 import UIKit
 
-//class ViewController: UIViewController {
-//
-//    var name:String = ""
-//    var oName:String?
-//    var o2Name:String!
-//
-//
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//
-//        name = "Kim"
-//        oName = "Kim"
-//        o2Name = name + oName!
-//
-//        print(name, oName!, o2Name)
-//
-//        // Do any additional setup after loading the view, typically from a nib.
-//    }
-
-func isNumber(inputNum1:String, inputNum2:String) -> Bool {
-    if let firstNumber = Int(inputNum1), let secondNum = Int(inputNum2) {
-        return true
-    }else {
-        return false
+struct Point {
+    var x = 0.0, y = 0.0
+}
+struct Size {
+    var width = 0.0, height = 0.0
+}
+struct Rect {
+    var origin = Point.init()
+    var size = Size.init()
+    var center: Point {
+        get {
+            let centerX = origin.x + (size.width / 2)
+            let centerY = origin.y + (size.height / 2)
+            return Point(x: centerX, y: centerY)
+        }
+        set {
+            origin.x = newValue.x - (size.width / 2)
+            origin.y = newValue.y - (size.height / 2)
+        }
     }
 }
-isNumber(inputNum1: "123", inputNum2: "321")
-    
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
+var changeValue: Int = 0 {
+    didSet(oldV) {
+        print("oldValue \(oldV)")
     }
-
-
+    willSet(willV) {
+        print("newValue \(willV)")
+    }
 }
-
+changeValue = 5
