@@ -14,21 +14,21 @@ class ViewController: UIViewController {
     var cantataBtn: UIButton!
     var ciderBtn: UIButton!
     var samdasuBtn: UIButton!
-    
+
     var oneThousandBtn: UIButton!
     var fiveHundredBtn: UIButton!
     var returnBtn: UIButton!
-    
+
     var colaView: UIImageView!
     var cantataView: UIImageView!
     var ciderView: UIImageView!
     var samdasuView: UIImageView!
-    
+
     var colaLb: UILabel!
     var cantataLb: UILabel!
     var ciderLb: UILabel!
     var samdasuLb: UILabel!
-    
+
     var displayLabel: UILabel!
     var displayLabel1: UILabel!
     
@@ -98,7 +98,6 @@ class ViewController: UIViewController {
         self.colaBtn.frame = CGRect(x: 30, y: 20, width: 150, height: 200)
         self.colaBtn.tag = 0
         self.colaBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
-        self.colaBtn.addTarget(self, action: #selector(calculationAction(_:)), for: .touchUpInside)
         self.view.addSubview(colaBtn)
         
         self.cantataBtn = UIButton()
@@ -160,54 +159,67 @@ class ViewController: UIViewController {
         self.returnBtn.setTitleColor(.gray, for: .normal)
         self.returnBtn.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         self.returnBtn.layer.borderWidth = 6
-        self.returnBtn.tag = 3
+        self.returnBtn.tag = 6
+        self.returnBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
         self.view.addSubview(returnBtn)
         
     }
 
-    @objc func calculationAction (_ sender: UIButton) {
+//    @objc func calculationAction (_ sender: UIButton) {
+//
+//        var displayStr1 = ""
+//        if  sender.tag == 0 {
+//            changeValue -= 1000
+//            displayStr1 += "잔액은 \(changeValue)입니다."
+//        } else if sender.tag == 1 {
+//            changeValue -= 1500
+//            displayStr1 += "잔액은 \(changeValue)입니다."
+//        } else if sender.tag == 2 {
+//            changeValue -= 800
+//            displayStr1 += "잔액은 \(changeValue)입니다."
+//        } else if sender.tag == 3 {
+//            changeValue -= 500
+//            displayStr1 += "잔액은 \(changeValue)입니다."
+//        }
+//
+//    }
+//
+    
+
+    
+    @objc func actionInputBtn (_ sender: UIButton) {
         var changeValue:Int = 0
+        var amountMoney: Int = 0
+        var displayStr = ""
         var displayStr1 = ""
+        
         if sender.tag == 4 {
-            changeValue += 1000
-            displayStr1 += "잔액은 \(changeValue)입니다."
+            displayStr += "1000원이 입급 되었습니다."
+            amountMoney += 1000
         } else if sender.tag == 5 {
-            changeValue += 500
-            displayStr1 += "잔액은 \(changeValue)입니다."
+            displayStr += "500원이 입금 되었습니다."
+            amountMoney += 500
         } else if sender.tag == 0 {
+            displayStr += "콜라가 나왔습니다."
             changeValue -= 1000
             displayStr1 += "잔액은 \(changeValue)입니다."
         } else if sender.tag == 1 {
+            displayStr += "칸타타가 나왔습니다."
             changeValue -= 1500
             displayStr1 += "잔액은 \(changeValue)입니다."
         } else if sender.tag == 2 {
+            displayStr += "사이다가 나왔습니다."
             changeValue -= 800
             displayStr1 += "잔액은 \(changeValue)입니다."
         } else if sender.tag == 3 {
+            displayStr += "삼다수가 나왔습니다."
             changeValue -= 500
             displayStr1 += "잔액은 \(changeValue)입니다."
-        }
-        displayLabel1.text = displayStr1
-    }
-    
-    
-    
-    @objc func actionInputBtn (_ sender: UIButton) {
-        var displayStr = ""
-        if sender.tag == 0 {
-            displayStr += "콜라가 나왔습니다."
-        } else if sender.tag == 1 {
-            displayStr += "칸타타가 나왔습니다."
-        } else if sender.tag == 2 {
-            displayStr += "사이다가 나왔습니다."
-        } else if sender.tag == 3 {
-            displayStr += "삼다수가 나왔습니다."
-        } else if sender.tag == 4 {
-            displayStr += "1000원이 입급 되었습니다."
-        } else if sender.tag == 5 {
-            displayStr += "500원이 입금 되었습니다."
+        } else if sender.tag == 6 {
+        displayStr1 += "잔액 \(changeValue)를 반환합니다."
         }
         displayLabel.text = displayStr
+        displayLabel1.text = displayStr1
     }
 
     override func didReceiveMemoryWarning() {
