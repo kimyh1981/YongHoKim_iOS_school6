@@ -29,12 +29,11 @@ class ViewController: UIViewController {
     var ciderLb: UILabel!
     var samdasuLb: UILabel!
 
-    var displayLabel: UILabel!
-    var displayLabel1: UILabel!
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         //이미지뷰
         self.colaView = UIImageView()
         self.colaView.image = UIImage(named: "콜라.png")
@@ -97,25 +96,25 @@ class ViewController: UIViewController {
         self.colaBtn = UIButton()
         self.colaBtn.frame = CGRect(x: 30, y: 20, width: 150, height: 200)
         self.colaBtn.tag = 0
-        self.colaBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
+//        self.colaBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
         self.view.addSubview(colaBtn)
         
         self.cantataBtn = UIButton()
         self.cantataBtn.frame = CGRect(x: 30, y: 230, width: 150, height: 200)
         self.cantataBtn.tag = 1
-        self.cantataBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
+//        self.cantataBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
         self.view.addSubview(cantataBtn)
         
         self.ciderBtn = UIButton()
         self.ciderBtn.frame = CGRect(x: 200, y: 20, width: 150, height: 200)
         self.ciderBtn.tag = 2
-        self.ciderBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
+//        self.ciderBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
         self.view.addSubview(ciderBtn)
         
         self.samdasuBtn = UIButton()
         self.samdasuBtn.frame = CGRect(x: 200, y: 230, width: 150, height: 200)
         self.samdasuBtn.tag = 3
-        self.samdasuBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
+//        self.samdasuBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
         self.view.addSubview(samdasuBtn)
         
         //DisplaLabel
@@ -140,7 +139,7 @@ class ViewController: UIViewController {
         self.oneThousandBtn.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         self.oneThousandBtn.layer.borderWidth = 1
         self.oneThousandBtn.tag = 4
-        self.oneThousandBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
+        self.oneThousandBtn.addTarget(self, action: #selector(resultBtnAction(_:)), for: .touchUpInside)
         self.view.addSubview(oneThousandBtn)
         
         self.fiveHundredBtn = UIButton()
@@ -150,7 +149,7 @@ class ViewController: UIViewController {
         self.fiveHundredBtn.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         self.fiveHundredBtn.layer.borderWidth = 1
         self.fiveHundredBtn.tag = 5
-        self.fiveHundredBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
+        self.fiveHundredBtn.addTarget(self, action: #selector(resultBtnAction(_:)), for: .touchUpInside)
         self.view.addSubview(fiveHundredBtn)
         
         self.returnBtn = UIButton()
@@ -160,67 +159,127 @@ class ViewController: UIViewController {
         self.returnBtn.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         self.returnBtn.layer.borderWidth = 6
         self.returnBtn.tag = 6
-        self.returnBtn.addTarget(self, action: #selector(actionInputBtn(_:)), for: .touchUpInside)
+        self.returnBtn.addTarget(self, action: #selector(resultBtnAction(_:)), for: .touchUpInside)
         self.view.addSubview(returnBtn)
         
     }
+    
+//    itemView()
+//    informationView()
+//    resultView()
+    var displayLabel: UILabel!
+    var displayLabel1: UILabel!
+    var itemMoney:Int = 0
+    
+    @ objc func resultBtnAction(_ sender: UIButton) {
+        if let money: Int = sender.tag {
+            if money == 0 {
+                itemMoney += 1000
+                displayLabel?.text = "1000원이 입금되었습니다."
+                displayLabel1?.text = "\(itemMoney)원"
+                
+            } else if money == 1 {
+                itemMoney += 500
+                displayLabel?.text = "500원이 입금되었습니다."
+                displayLabel1?.text = "\(itemMoney)원"
+            } else {
+                itemMoney = 0
+                displayLabel?.text = "\(itemMoney)가 반환되었습니다."
+                displayLabel1?.text = "잔액\(itemMoney)원"
+            }
+        }
+    }
+    
+    @objc func btnAction(_ sender: UIButton) {
+        if let result: Int = sender.tag {
+            if result == 0 {
+                if itemMoney >= 1000 {
+                    displayLabel?.text = "콜라가 나왔습니다."
+                    itemMoney = itemMoney - 1000
+                    displayLabel1?.text = "\(itemMoney)원이 남았습니다."
+                } else {
+                    dis
+                }
+            }
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
-//    @objc func calculationAction (_ sender: UIButton) {
 //
+//    @objc func actionInputBtn (_ sender: UIButton) {
+//        var changeValue:Int = 0
+//        var amountMoney: Int = 0
+//        var displayStr = ""
 //        var displayStr1 = ""
-//        if  sender.tag == 0 {
+//
+//        if sender.tag == 4 {
+//            displayStr += "1000원이 입급 되었습니다."
+//            amountMoney += 1000
+//        } else if sender.tag == 5 {
+//            displayStr += "500원이 입금 되었습니다."
+//            amountMoney += 500
+//        } else if sender.tag == 0 {
+//            displayStr += "콜라가 나왔습니다."
 //            changeValue -= 1000
 //            displayStr1 += "잔액은 \(changeValue)입니다."
 //        } else if sender.tag == 1 {
+//            displayStr += "칸타타가 나왔습니다."
 //            changeValue -= 1500
 //            displayStr1 += "잔액은 \(changeValue)입니다."
 //        } else if sender.tag == 2 {
+//            displayStr += "사이다가 나왔습니다."
 //            changeValue -= 800
 //            displayStr1 += "잔액은 \(changeValue)입니다."
 //        } else if sender.tag == 3 {
+//            displayStr += "삼다수가 나왔습니다."
 //            changeValue -= 500
 //            displayStr1 += "잔액은 \(changeValue)입니다."
+//        } else if sender.tag == 6 {
+//        displayStr1 += "잔액 \(changeValue)를 반환합니다."
 //        }
-//
+//        displayLabel.text = displayStr
+//        displayLabel1.text = displayStr1
 //    }
-//
-    
-
-    
-    @objc func actionInputBtn (_ sender: UIButton) {
-        var changeValue:Int = 0
-        var amountMoney: Int = 0
-        var displayStr = ""
-        var displayStr1 = ""
-        
-        if sender.tag == 4 {
-            displayStr += "1000원이 입급 되었습니다."
-            amountMoney += 1000
-        } else if sender.tag == 5 {
-            displayStr += "500원이 입금 되었습니다."
-            amountMoney += 500
-        } else if sender.tag == 0 {
-            displayStr += "콜라가 나왔습니다."
-            changeValue -= 1000
-            displayStr1 += "잔액은 \(changeValue)입니다."
-        } else if sender.tag == 1 {
-            displayStr += "칸타타가 나왔습니다."
-            changeValue -= 1500
-            displayStr1 += "잔액은 \(changeValue)입니다."
-        } else if sender.tag == 2 {
-            displayStr += "사이다가 나왔습니다."
-            changeValue -= 800
-            displayStr1 += "잔액은 \(changeValue)입니다."
-        } else if sender.tag == 3 {
-            displayStr += "삼다수가 나왔습니다."
-            changeValue -= 500
-            displayStr1 += "잔액은 \(changeValue)입니다."
-        } else if sender.tag == 6 {
-        displayStr1 += "잔액 \(changeValue)를 반환합니다."
-        }
-        displayLabel.text = displayStr
-        displayLabel1.text = displayStr1
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
