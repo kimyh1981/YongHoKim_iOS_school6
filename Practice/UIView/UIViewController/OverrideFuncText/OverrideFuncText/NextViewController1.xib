@@ -25,7 +25,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="GoToNextPage"/>
                     <connections>
-                        <action selector="backToMain:" destination="-1" eventType="touchUpInside" id="NmI-9E-vwj"/>
+                        <action selector="backToMain:" destination="-1" eventType="touchUpInside" id="lSW-4C-fzs"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewd-vn-YOZ">
@@ -33,7 +33,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="BackToFirstPage"/>
                     <connections>
-                        <action selector="backToFristPage:" destination="-1" eventType="touchUpInside" id="F1n-7y-Xhj"/>
+                        <action selector="backToFristPage:" destination="-1" eventType="touchUpInside" id="cpR-VA-AGF"/>
                     </connections>
                 </button>
             </subviews>

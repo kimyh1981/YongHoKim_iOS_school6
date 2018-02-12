@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="MoveToNext"/>
                                 <connections>
-                                    <action selector="moveToNextVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J0o-GX-DLu"/>
+                                    <action selector="moveToNextVC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LVc-qv-d8j"/>
                                 </connections>
                             </button>
                         </subviews>
