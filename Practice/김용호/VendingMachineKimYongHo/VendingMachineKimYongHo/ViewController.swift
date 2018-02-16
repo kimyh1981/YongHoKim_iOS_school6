@@ -33,6 +33,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var btn1: InputBtn = InputBtn.init(frame: CGRect(x: 100, y: 100, width: 100, height: 100))
+        btn1.createBtn(title: "1000원")
+        self.view.addSubview(btn1)
+        
+        var btn2: InputBtn = InputBtn(frame: <#T##CGRect#>, title: <#T##String#>)
+          createBtn(title: "600원")
+        var btn22: InputBtn = btn2
 
         //이미지뷰
         self.colaView = UIImageView()
@@ -190,19 +197,19 @@ class ViewController: UIViewController {
         }
     }
     
-    @objc func btnAction(_ sender: UIButton) {
-        if let result: Int = sender.tag {
-            if result == 0 {
-                if itemMoney >= 1000 {
-                    displayLabel?.text = "콜라가 나왔습니다."
-                    itemMoney = itemMoney - 1000
-                    displayLabel1?.text = "\(itemMoney)원이 남았습니다."
-                } else {
-                    dis
-                }
-            }
-        }
-    }
+//    @objc func btnAction(_ sender: UIButton) {
+//        if let result: Int = sender.tag {
+//            if result == 0 {
+//                if itemMoney >= 1000 {
+//                    displayLabel?.text = "콜라가 나왔습니다."
+//                    itemMoney = itemMoney - 1000
+//                    displayLabel1?.text = "\(itemMoney)원이 남았습니다."
+//                } else {
+//                    dis
+//                }
+//            }
+//        }
+//    }
     
     
     

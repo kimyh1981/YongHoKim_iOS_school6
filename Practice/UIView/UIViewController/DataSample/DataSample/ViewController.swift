@@ -30,26 +30,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
         idTF.layer.borderWidth = 0.8
         idTF.textColor = UIColor.black
         idTF.delegate = self
-        idTF.tag = 1
+//        idTF.tag = 1
         idTF.becomeFirstResponder()
-        idTF.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .touchUpInside)
+//        idTF.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: )
         view.addSubview(idTF)
         
         pwTF = UITextField()
         pwTF.placeholder = "PW here."
         pwTF.frame = CGRect(x: 15, y: 160, width: view.frame.size.width * 0.9, height: 50)
-        pwTF.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        pwTF.layer.borderColor = UIColor.black.cgColor
         pwTF.layer.borderWidth = 0.8
         pwTF.textColor = UIColor.black
         pwTF.delegate = self
-        pwTF.tag = 2
-        pwTF.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .touchUpInside)
+//        pwTF.tag = 2
+//        pwTF.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .touchUpInside)
         view.addSubview(pwTF)
     }
-    @objc func textFieldShouldReturn(_ idTF: UITextField) -> Bool {
-        if idTF.tag == 1 {
+    func textFieldShouldReturn(_ idTF: UITextField) -> Bool {
+        if self.idTF.isFirstResponder {
             pwTF.becomeFirstResponder()
-        } else if idTF.tag == 2 {
+        } else if self.pwTF.isFirstResponder {
             pwTF.resignFirstResponder()
         }
         return true
@@ -82,11 +82,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     
     @objc func login(_ sender: Any) {
-        if let list = UserDefaults.standard.array(forKey: key) as? [String] {
+        if let list: [String] = UserDefaults.standard.array(forKey: key) as? [String] {
             for name in list {
                 if idTF.text == name {
                     let storyboard = UIStoryboard(name: "Main", bundle: nil)
                     let nextVC: NextViewController = storyboard.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
+//                    let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
                     nextVC.modalTransitionStyle = .flipHorizontal
                     self.present(nextVC, animated: true, completion: nil)
                 } else {

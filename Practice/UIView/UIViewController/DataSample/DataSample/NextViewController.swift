@@ -12,13 +12,10 @@ class NextViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Create New Account"
-        let item: UIBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(cancelAndBackToMain(_:)))
-        item.title = "Cancel"
-        self.navigationItem.leftBarButtonItem = item
-    }
-    @objc func cancelAndBackToMain (_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationItem.title = "Welcome to first page!"
+
+    
+
     }
 
     override func didReceiveMemoryWarning() {

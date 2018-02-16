@@ -12,16 +12,16 @@ class SignViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.title = "Create New Account"
-//        let item: UIBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(cancelAndBackToMain(_:)))
-//        item.title = "Cancel"
-//        self.navigationItem.leftBarButtonItem = item
+        self.title = "Create New Account"
+        let item: UIBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(cancelAndBackToMain(_:)))
+        item.title = "Cancel"
+        self.navigationItem.leftBarButtonItem = item
 
     }
     
-//    @objc func cancelAndBackToMain (_ sender: UIBarButtonItem) {
-//        self.dismiss(animated: true, completion: nil)
-//    }
+    @objc func cancelAndBackToMain (_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

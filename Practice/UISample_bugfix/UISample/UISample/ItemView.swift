@@ -66,7 +66,7 @@ class ItemView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.name = name
-        }
+        
         createView()
         updateLayout()
     }
