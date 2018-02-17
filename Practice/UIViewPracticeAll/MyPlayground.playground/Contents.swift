@@ -237,3 +237,34 @@ func forTest3() {
     }
 }
 print(forTest3())
+
+func matchAlphabet() {
+    let alphabetList: [String] = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    print(alphabetList.count)
+    for character in alphabetList {
+        print(character)
+    }
+}
+print(matchAlphabet())
+//반복문 통해서 알파벳 나타내보기!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
