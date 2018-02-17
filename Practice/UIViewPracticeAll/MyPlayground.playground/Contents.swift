@@ -95,22 +95,145 @@ func conditionTest() {
 }
 print(conditionTest())
 
+func checkDoubleNum(num: Int) -> Bool {
+    if num % 2 == 0 {
+        return true
+    } else {
+        return false
+    }
+}
+print(checkDoubleNum(num: 4))
 
+func changeGrade(grade: Int) -> String {
+    if grade <= 100 && grade > 95 {
+        return "A"
+    } else if grade >= 90 && grade < 95 {
+        return "B"
+    } else {
+        return "C"
+    }
+}
+print(changeGrade(grade: 88))
 
+func matchSomething(num: Int) {
+    switch num {
+    case 100:
+        print("num is 100.")
+    default:
+        print("num is not 100.")
+    }
+}
+print(matchSomething(num: 101))
 
+func matchNum(num: Int) {
+    switch num {
+    case 1,2,3,4,5:
+        print("num is within 1~5.")
+    case 5...10:
+        print("num is within 6~10.")
+    default:
+        print("num is not in 1~10.")
+    }
+}
+print(matchNum(num: 10))
 
+func matchString(character: String) {
+    switch character {
+    case "kim":
+        print("correct")
+    default:
+        print("not correct")
+    }
+}
+print(matchString(character: "kim"))
+//반복문 통해서 알파벳 나타내보기!
 
+func checkRange(num: Int) {
+    switch num {
+    case 0...9:
+        print("일 단위")
+    case 10...99:
+        print("십 단위")
+    case 100...999:
+        print("백 단위")
+    default:
+        print("측정 단위 초과")
+    }
+}
+print(checkRange(num: 9999))
 
+func checkXYposition(position:(Int, Int)) {
+    switch position {
+    case (0, 0):
+        print("located in origin.")
+    case (_ , 0):
+        print("\(position) is located in x axis.")
+    case (0, _):
+        print("\(position) is located in y axis.")
+    case (-2...2, -2...2):
+        print("\(position) is located in 4square box.")
+    default:
+        print("located in somewhere.")
+    }
+}
+print(checkXYposition(position: (10, 0)))
 
+func bindingValue(value1:(Int, Int)) {
+    switch value1 {
+    case (let x, 0):
+        print("\(x) is on x axis.")
+    case (0, let y):
+        print("\(y) is on y axis.")
+    default:
+        print("not")
+    }
+}
+print(bindingValue(value1: (0,6)))
 
+func grade(score: Int) -> String {
+    var returnValue: String
+    switch score {
+    case let x where x < 100 && x >= 90:
+        returnValue = "A"
+    case let x where x < 90 && x >= 80:
+        returnValue = "B"
+    case let x where x < 80 && x >= 70:
+        returnValue = "C"
+    default:
+        returnValue = "F"
+    }
+    return returnValue
+}
+print(grade(score: 69))
 
+func whileTest() {
+    var a: Int = 10
+    while a > 0 {
+        print(a)
+        a -= 1
+    }
+}
+print(whileTest())
 
+func forTest() {
+    let list: [Int] = [1,2,3,4]
+    for item in list {
+        print(item)
+    }
+}
+print(forTest())
 
+func forTest2() {
+    for item in 1...100 {
+        print(item)
+    }
+}
+print(forTest2())
 
-
-
-
-
-
-
-
+func forTest3() {
+//    var lastIndex: Int = 10
+    for i in 0..<10 {
+        print(i)
+    }
+}
+print(forTest3())
