@@ -54,13 +54,21 @@ print(numbers[1])
 referenceParameter(&numbers)
 print(numbers[1])
 
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let tempValue = a
+    a = b
+    b = tempValue
+}
 
+var someInt = 3
+var anotherInt = 100
+swapTwoInts(&someInt, &anotherInt)
+print("someInt is now \(someInt), and another is now \(anotherInt).")
 
-
-
-
-
-
+var aInt = 1000
+var bInt = 2000
+swapTwoInts(&aInt, &bInt)
+print("aInt is now \(aInt), and bInt is now \(bInt).")
 
 
 

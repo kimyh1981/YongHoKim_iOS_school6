@@ -246,25 +246,120 @@ func matchAlphabet() {
     }
 }
 print(matchAlphabet())
-//반복문 통해서 알파벳 나타내보기!
 
+struct CoordinatePoint {
+    var x: Int
+    var y: Int
+    
+    var oppositePoint: CoordinatePoint {
+        get {
+            return CoordinatePoint(x: -x, y: -y)
+        }
+        set(opposite) {
+            x = -opposite.x
+            y = -opposite.y
+        }
+    }
+}
+var kimPosition: CoordinatePoint = CoordinatePoint(x: 10, y: 15)
+print(kimPosition)
+print(kimPosition.oppositePoint)
+kimPosition.oppositePoint = CoordinatePoint(x: 100, y: 150)
+print(kimPosition)
 
+//swap이랑은 완전 다름 VS getset
+func inoutTest(_ x: inout Int, _ y: inout Int) {
+    let tempCoordinate = x
+    x = y
+    y = tempCoordinate
+}
 
+var someX = 3
+var someY = 5
+inoutTest(&someX, &someY)
+print("someX is now \(someX), and someY is now \(someY).")
 
+//연산프로퍼티
+struct CoordinatePoint1 {
+    var x: Int
+    var y: Int
+    
+    var oppositePoint: CoordinatePoint1 {
+        get {
+            return CoordinatePoint1(x: -x, y: -y)
+        }
+        set {
+            x = -newValue.x
+            y = -newValue.y
+        }
+    }
+}
+var leePosition: CoordinatePoint1 = CoordinatePoint1(x: 20, y: 30)
+print(leePosition.oppositePoint)
+leePosition.oppositePoint = CoordinatePoint1(x: 100, y: 200)
+print(leePosition)
 
+struct CoordinatePoint2 {
+    var x: Int
+    var y: Int
+    
+    var oppositePoint: CoordinatePoint2 {
+        get {
+            return CoordinatePoint2(x: -x, y: -y)
+        }
+    }
+}
+var parkPosition: CoordinatePoint2 = CoordinatePoint2(x: 40, y: 50)
+print(parkPosition)
+print(parkPosition.oppositePoint)
+//getset심층 예제 활용 찾아 하기!
 
+class Account {
+    var credit: Int = 5000 {
+        willSet {
+            print("Balance will be changed from \(credit) to \(newValue).")
+        }
+        didSet {
+            print("Balance was changed from \(oldValue) to \(credit).")
+        }
+    }
+}
+let myAccount: Account = Account()
+myAccount.credit = 1000
+//Property Observers 심층 예제 활용 찾아 하기!
 
+class Account1 {
+    var credit: Int = 0 {
+        willSet {
+            print("Balance1 will be changed from \(credit) to \(newValue).")
+        }
+        didSet {
+            print("Balance2 was changed from \(oldValue) to \(credit).")
+        }
+    }
+    
+    var dollarValue: Double {
+        get {
+            return Double(credit) / 1000.0
+        }
+        set {
+            credit = Int(newValue * 1000)
+            print("Balance3 is being changed to \(newValue).")
+        }
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+class ForeignAccount: Account1 {
+    override var dollarValue: Double {
+        willSet {
+            print("Balance4 will be changed from \(dollarValue) to \(newValue).")
+        }
+        didSet {
+            print("Balance5 was changed from \(oldValue) to \(dollarValue).")
+        }
+    }
+}
+let myAccount1: ForeignAccount = ForeignAccount()
+myAccount1.credit = 1000
+myAccount1.dollarValue = 2
 
