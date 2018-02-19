@@ -363,3 +363,177 @@ let myAccount1: ForeignAccount = ForeignAccount()
 myAccount1.credit = 1000
 myAccount1.dollarValue = 2
 
+class Rectangle {
+    var height: Int = 99 {
+        willSet {
+            print("사각형 높이 변경 예정: \(newValue)")
+        }
+        didSet {
+            print("사각형 높이 변경 완료. 이전값: \(oldValue)")
+        }
+    }
+}
+let someRectangle: Rectangle = Rectangle()
+someRectangle.height = 100
+
+//실패 가능한 이니셜라이져
+class Person {
+    let name: String
+    var age: Int?
+    
+    init?(name: String) {
+        if name.isEmpty {
+            return nil
+        }
+        self.name = name
+    }
+    init?(name: String, age: Int) {
+        if name.isEmpty || age < 0{
+            return nil
+        }
+        self.name = name
+        self.age = age
+    }
+}
+
+let kim: Person? = Person(name: "Kim", age: 99)
+
+if let person: Person = kim {
+    print(person.name)
+} else {
+    print("Person wasn't initialized.")
+}
+
+let lee: Person? = Person(name: "lee", age: -10)
+if let person: Person = lee {
+    print(person.name)
+} else {
+    print("Person wasn't initialized.")
+}
+
+let park: Person? = Person(name: "", age: 30)
+if let person: Person = park {
+    print(person.name)
+} else {
+    print("Person wasn't initialized.")
+}
+
+//디이니셜라이져 활용
+class FileManager {
+    var fileName: String
+    
+    init(fileName: String) {
+        self.fileName = fileName
+    }
+    func openFile() {
+        print("Open File: \(self.fileName)")
+    }
+    func modifyFile() {
+        print("Modify File: \(self.fileName)")
+    }
+    func writeFile() {
+        print("Write File: \(self.fileName)")
+    }
+    func closeFile() {
+        print("Close File: \(self.fileName)")
+    }
+    deinit {
+        print("Deinit instance")
+        self.writeFile()
+        self.closeFile()
+    }
+}
+var fileManager: FileManager? = FileManager(fileName: "abc.txt")
+if let manager: FileManager = fileManager {
+    manager.openFile()
+    manager.modifyFile()
+}
+fileManager = nil
+
+//접근수준을 명기한 각 요소들의 예 작성
+open class OpenClass {
+    open var openProperty: Int = 0
+    public var publicProperty: Int = 0
+    internal var internalProperty: Int = 0
+    fileprivate var fileprivateProperty: Int = 0
+    private var privateProperty: Int = 0
+    
+    open func openMethod() {}
+    public func publicMethod() {}
+    internal func internalMethod() {}
+    fileprivate func fileprivateMethod() {}
+    private func privateMethod() {}
+}
+
+public class publicClass {}
+public struct publicStruct {}
+public enum publicEnum {}
+public var publicVariable = 0
+public let publicConstant = 0
+public func publicFunction() {}
+
+internal class internalClass {}
+internal struct internalStruct {}
+internal enum internalEnum {}
+internal var internalVariable = 0
+internal let internalConstant = 0
+internal func internalFunction() {}
+
+fileprivate class fileprivateClass {}
+fileprivate struct fileprivateStruct {}
+fileprivate enum fileprivateEnum {}
+fileprivate var fileprivateVariable = 0
+fileprivate let fileprivateConstant = 0
+fileprivate func fileprivateFunction() {}
+
+private class privateClass {}
+private struct privateStruct {}
+private enum privateEnum {}
+private var privateVariable = 0
+private let privateConstant = 0
+private func privateFunction() {}
+
+//접근수준에 따른 접근 결과 및 테스트
+class Aclass {
+    func internalMethod() {}
+    fileprivate func fileprivateMethod() {}
+    private func privateMethod() {}
+    var internalProperty = 0
+    fileprivate var fileprivateProperty = 0
+    private var privateProperty = 0
+    
+    func test() {
+    privateProperty = 1
+        print(privateProperty)
+    }
+}
+
+class Bclass: Aclass {
+    var car: String
+    override init() {
+        init(car: String){
+            self.car = car
+            super.init()
+        }
+    }
+}
+
+
+let aInstance: Aclass = Aclass()
+aInstance.internalMethod()
+aInstance.fileprivateMethod() //실제로 다른 swift파일에서는 호출 불가함
+//aInstance.privateMethod()
+aInstance.internalProperty = 1
+aInstance.fileprivateProperty = 1 //실제로 다른 swift파일에서는 접근 불가능
+//aInstance.privateProperty = 1
+
+
+
+
+
+
+
+
+
+
+
