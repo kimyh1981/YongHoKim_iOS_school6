@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  ClassPractice20180217
+//  Class&InheritancePractice20180219
 //
-//  Created by KimYong Ho on 2018. 2. 17..
+//  Created by KimYong Ho on 2018. 2. 20..
 //  Copyright © 2018년 KimYong Ho. All rights reserved.
 //
 
