@@ -1,31 +1,33 @@
 //
 //  SignUpViewController.swift
-//  LoginProject
+//  NewProjectTableView
 //
-//  Created by KimYong Ho on 2018. 2. 20..
+//  Created by KimYong Ho on 2018. 2. 21..
 //  Copyright © 2018년 KimYong Ho. All rights reserved.
 //
 
 import UIKit
-let USER_LIST: [[String:String]]?
-class SignUpViewController: UIViewController, UITextFieldDelegate {
-    
+
+let USER_LIST: "String:String"
+class SignUpViewController: UIViewController, UITextFieldDelegate{
+
     private var idTF: UITextField!
     private var pwTF: UITextField!
     private var signBtn: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.title = "Open New Account"
+        
+        self.title = "Open New ID"
         let item: UIBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: #selector(backToMain(_:)))
         item.title = "Back"
         self.navigationItem.leftBarButtonItem = item
+        
         createTF()
         createBtn()
         updateLayOut()
-
     }
+    
     
     fileprivate func createTF() {
         idTF = UITextField()
@@ -56,7 +58,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signBtn.setTitleColor(.black, for: .highlighted)
         signBtn.layer.borderColor = UIColor.gray.cgColor
         signBtn.layer.borderWidth = 0.5
-        signBtn.addTarget(self, action: #selector(signUp(_:)), for: .touchUpInside)
+//        signBtn.addTarget(self, action: #selector(signUp(_:)), for: .touchUpInside)
         view.addSubview(signBtn)
         
     }
@@ -74,14 +76,30 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         signBtn.frame = CGRect(x: offSetX, y: offSetY, width: inputFrameWidth, height: 50)
     }
     
-    func textFieldShouldReturn(_ idTF: UITextField) -> Bool {
-        if self.idTF.isFirstResponder {
-            pwTF.becomeFirstResponder()
-        } else if self.pwTF.isFirstResponder {
-            pwTF.resignFirstResponder()
-        }
-        return true
+    @objc func backToMain (_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
+    
+    @objc func signUp(_ sender: UIButton) {
+        if checkInputValid() {
+            let id: String = idTF.text!
+            let pw: String = pwTF.text!
+
+            let userInfo: [String:String] = ["user_id":id, "user_pw":pw]
+            if var userList = UserDefaults.standard.array(forKey: USER_LIST) as? [[String:String]] {
+                userList.append(userInfo)
+                UserDefaults.standard.set(userList, forKey: USER_LIST)
+            } else {
+                var userList: [[String:String]] = []
+                userList.append(userInfo)
+                UserDefaults.standard.set(userList, forKey: USER_LIST)
+            }
+
+            self.navigationController?.dismiss(animated: true, completion: nil)
+        }
+
+    }
+
     
     private func checkInputValid() -> Bool {
         if pwTF.text!.count > 4 {
@@ -95,45 +113,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @objc func signUp(_ sender: UIButton) {
-        if checkInputValid() {
-            let id: String = idTF.text!
-            let pw: String = pwTF.text!
-            
-            let userInfo: [String:String] = ["user_id":id, "user_pw":pw]
-            if var userList = UserDefaults.standard.array(forKey: USER_LIST) as? [[String:String]] {
-                userList.append(userInfo)
-                UserDefaults.standard.set(userList, forKey: USER_LIST)
-            } else {
-                var userList: [[String:String]] = []
-                userList.append(userInfo)
-                UserDefaults.standard.set(userList, forKey: USER_LIST)
-            }
-            
-            self.navigationController?.dismiss(animated: true, completion: nil)
+    func textFieldShouldReturn(_ idTF: UITextField) -> Bool {
+        if self.idTF.isFirstResponder {
+            pwTF.becomeFirstResponder()
+        } else if self.pwTF.isFirstResponder {
+            pwTF.resignFirstResponder()
         }
-        
+        return true
     }
-    
-    
-    @objc func backToMain (_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

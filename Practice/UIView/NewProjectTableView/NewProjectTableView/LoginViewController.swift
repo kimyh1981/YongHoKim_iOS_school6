@@ -1,74 +1,28 @@
 //
 //  LoginViewController.swift
-//  LoginProject
+//  NewProjectTableView
 //
-//  Created by KimYong Ho on 2018. 2. 20..
+//  Created by KimYong Ho on 2018. 2. 21..
 //  Copyright © 2018년 KimYong Ho. All rights reserved.
 //
 
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-    
-    
+
     var idTf: UITextField!
     var pwTf: UITextField!
     
     var loginBtn: UIButton!
     var signUpBtn: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         createUI()
         updateLayOut()
 
+        // Do any additional setup after loading the view.
     }
-    
-    @objc private func touchUpInsideLoginBtn(_ sender: UIButton) {
-            print("Login succeed.")
-    }
-    
-    @objc private func touchUpInsideSignUpBtn(_ sender: UIButton) {
-        let alertVC0: UIAlertController = UIAlertController(title: "SignUp", message: "Do you want sign-up?", preferredStyle: .alert)
-        let action1 = UIAlertAction(title: "Yes", style: .default) { (action) in
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let signUpVC: SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
-//            signUpVC.modalTransitionStyle = .coverVertical
-//            let navigation = UINavigationController(rootViewController: signUpVC)
-//            self.present(navigation, animated: true, completion: nil)
-            let navigation = storyboard.instantiateViewController(withIdentifier: "UINavigationController") as! UINavigationController
-            self.present(navigation, animated: true, completion: nil)
-        }
-        let action2 = UIAlertAction(title: "No", style: .default) { (action) in
-            
-        }
-        alertVC0.addAction(action1)
-        alertVC0.addAction(action2)
-        
-        self.present(alertVC0, animated:  true, completion: nil)
-    }
-    
-//    private func checkInputValid() -> Bool {
-//        if pwTf.text!.count > 4 {
-//            return true
-//        } else {
-//            let alertVC: UIAlertController = UIAlertController(title: "Problem happend.", message: "Password must be 4digit numbers.", preferredStyle: .alert)
-//            let action: UIAlertAction = UIAlertAction(title: "Check", style: .cancel, handler: nil)
-//            alertVC.addAction(action)
-//            self.present(alertVC, animated: true, completion: nil)
-//        }
-//        return true
-//    }
-    
-    func textFieldShouldReturn(_ sender: UITextField) -> Bool {
-        if idTf.tag == 10 {
-            pwTf.becomeFirstResponder()
-        } else {
-            pwTf.resignFirstResponder()
-        }
-        return true
-    }
-    
     private func createUI() {
         idTf = UITextField()
         idTf.placeholder = "ID Here"
@@ -104,6 +58,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(signUpBtn)
     }
     
+    func textFieldShouldReturn(_ sender: UITextField) -> Bool {
+        if idTf.tag == 10 {
+            pwTf.becomeFirstResponder()
+        } else {
+            pwTf.resignFirstResponder()
+        }
+        return true
+    }
+    
+    @objc private func touchUpInsideLoginBtn(_ sender: UIButton) {
+        if idTf.text! == idTf.text && pwTf.text! == pwTf.text{
+        print("Login succeed.")
+        } else {
+            let alertVC
+        }
+    }
+    
+    @objc private func touchUpInsideSignUpBtn(_ sender: UIButton) {
+        let alertVC0: UIAlertController = UIAlertController(title: "Sign-Up", message: "Open your ID", preferredStyle: .alert)
+        let action1 = UIAlertAction(title: "Yes", style: .default) { (action) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let signUpVC: SignUpViewController = storyboard.instantiateViewController(withIdentifier: "SignUpViewController") as! SignUpViewController
+//            signUpVC.modalTransitionStyle = .coverVertical
+            let navigation = storyboard.instantiateViewController(withIdentifier: "UINavigationController") as! UINavigationController
+            self.present(navigation, animated: true, completion: nil)
+            
+        }
+        let action2 = UIAlertAction(title: "No", style: .default) { (action) in
+        }
+        alertVC0.addAction(action1)
+        alertVC0.addAction(action2)
+        self.present(alertVC0, animated: true, completion: nil)
+    }
+    
     private func updateLayOut() {
         var offSetY:CGFloat = 150
         let inputFrameWidth: CGFloat = view.frame.size.width/2
@@ -120,4 +108,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         signUpBtn.frame = CGRect(x: offSetX, y: offSetY, width: (inputFrameWidth - btnMargin)/2, height: 50)
     }
+
+ 
 }
