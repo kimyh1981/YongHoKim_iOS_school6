@@ -10,18 +10,19 @@ import UIKit
 
 class NextViewController: UIViewController {
     
-    
 
+    var tTitle: String?
+    
     @IBOutlet weak var detailInformation: UILabel!
-    
-
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        detailInformation.text = tTitle
+
     
 
         
     }
-    
 
 }

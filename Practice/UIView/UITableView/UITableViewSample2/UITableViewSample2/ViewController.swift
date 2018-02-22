@@ -20,6 +20,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
         
+        
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.actorList.count
@@ -41,9 +42,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC: UIViewController = storyboard.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
+        let nextVC: NextViewController = storyboard.instantiateViewController(withIdentifier: "NextViewController") as! NextViewController
+        let lBtitle = tableView.cellForRow(at: indexPath)
+        nextVC.tTitle = lBtitle?.textLabel?.text
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
+    
     
 
 }

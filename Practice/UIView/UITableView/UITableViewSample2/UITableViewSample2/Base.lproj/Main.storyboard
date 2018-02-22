@@ -46,7 +46,7 @@
                         <viewLayoutGuide key="safeArea" id="Anw-iT-Af3"/>
                     </view>
                     <connections>
-                        <outlet property="detailInformation" destination="bsf-Wa-iqR" id="dJ5-yF-JxJ"/>
+                        <outlet property="detailInformation" destination="bsf-Wa-iqR" id="egb-i8-fPD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RK0-xl-mhV" userLabel="First Responder" sceneMemberID="firstResponder"/>
