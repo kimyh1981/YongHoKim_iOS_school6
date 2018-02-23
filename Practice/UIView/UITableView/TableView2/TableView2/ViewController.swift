@@ -12,10 +12,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet var tableView: UITableView!
     
-    
+//    let model: [Weather] = [
+//        Weather(city: <#T##String#>, tempature: <#T##String#>, time: <#T##String#>, imageFileName: <#String#>),
+//        Weather(city: <#String#>, tempature: <#T##String#>, time: <#T##String#>),
+//        Weather(city: <#T##String#>, tempature: <#T##String#>, time: <#T##String#>),
+//        Weather(city: <#T##String#>, tempature: <#T##String#>, time: <#T##String#>),
+//        Weather(city: <#T##String#>, tempature: <#T##String#>, time: <#T##String#>),
+//        Weather(city: <#T##String#>, tempature: <#T##String#>, time: <#T##String#>),
+//    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.tableFooterView = UIView(frame: .zero)
         
     }
 
@@ -25,11 +33,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MyTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! MyTableViewCell
+        
+//        let cellData = model[indexPath.row]
+//        cell.time1.text = cellData.time
+//        cell.city1.text = cellData.city
+//        cell.temp1.text = cellData.tempature
+//        cell.sunny1.image = UIImage(named: cellData.imageFileName)
         if indexPath.row == 0 {
             cell.sunny1.image = UIImage(named: "sunny2.jpg")
             cell.time1.text = "AM 03:50"
             cell.city1.text = "Seoul"
             cell.temp1.text = "-5 ℃"
+
         } else if indexPath.row == 1 {
             cell.sunny1.image = UIImage(named: "rainy2.jpg")
             cell.time1.text = "AM 08:50"
@@ -82,6 +97,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("\(indexPath.row)번이 열이 선택됨.")
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        
     }
     
     
