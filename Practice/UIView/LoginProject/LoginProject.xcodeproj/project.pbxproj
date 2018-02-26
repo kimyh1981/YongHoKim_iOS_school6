@@ -15,6 +15,8 @@
 		7A4D3112203BB4EA0094C043 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D3111203BB4EA0094C043 /* LoginViewController.swift */; };
 		7A4D3114203BD1D80094C043 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4D3113203BD1D80094C043 /* SignUpViewController.swift */; };
 		7A4D3121203BF3C10094C043 /* Sub.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A4D311F203BF3C10094C043 /* Sub.storyboard */; };
+		7AD1F9932043AB2400DE4937 /* UserDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD1F9922043AB2400DE4937 /* UserDataCenter.swift */; };
+		7AD1F9952043CBC100DE4937 /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AD1F9942043CBC100DE4937 /* UserDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7A4D3111203BB4EA0094C043 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		7A4D3113203BD1D80094C043 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		7A4D3120203BF3C10094C043 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LoginProject/Base.lproj/Sub.storyboard; sourceTree = "<group>"; };
+		7AD1F9922043AB2400DE4937 /* UserDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataCenter.swift; sourceTree = "<group>"; };
+		7AD1F9942043CBC100DE4937 /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				7A4D3101203BB1F50094C043 /* ViewController.swift */,
 				7A4D3111203BB4EA0094C043 /* LoginViewController.swift */,
 				7A4D3113203BD1D80094C043 /* SignUpViewController.swift */,
+				7AD1F9922043AB2400DE4937 /* UserDataCenter.swift */,
+				7AD1F9942043CBC100DE4937 /* UserDataModel.swift */,
 				7A4D3103203BB1F50094C043 /* Main.storyboard */,
 				7A4D311F203BF3C10094C043 /* Sub.storyboard */,
 				7A4D3106203BB1F50094C043 /* Assets.xcassets */,
@@ -146,7 +152,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AD1F9952043CBC100DE4937 /* UserDataModel.swift in Sources */,
 				7A4D3112203BB4EA0094C043 /* LoginViewController.swift in Sources */,
+				7AD1F9932043AB2400DE4937 /* UserDataCenter.swift in Sources */,
 				7A4D3102203BB1F50094C043 /* ViewController.swift in Sources */,
 				7A4D3114203BD1D80094C043 /* SignUpViewController.swift in Sources */,
 				7A4D3100203BB1F50094C043 /* AppDelegate.swift in Sources */,

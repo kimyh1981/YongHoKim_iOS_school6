@@ -10,17 +10,22 @@ import UIKit
 
 class ViewController: UIViewController {
     
-
+    var list: [[String:Any]] = []
+    var model: UserDataModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        var modelList:[UserDataModel] = []
+        
+        for dic in list {
+            if let data = UserDataModel(dic: dic) {
+                modelList.append(data)
+            }
+        }
+        model = UserDataModel(dic: list[0])
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }

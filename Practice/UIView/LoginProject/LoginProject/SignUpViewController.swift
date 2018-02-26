@@ -7,7 +7,7 @@
 //
 
 import UIKit
-let USER_LIST: [[String:String]]?
+let USER_LIST: [[String:String]] = []
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     private var idTF: UITextField!
