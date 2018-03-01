@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+let key: String = ""
 class ViewController: UIViewController, UITableViewDataSource {
     
     var data: [String] = []
@@ -18,10 +18,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         
         let notiCenter = NotificationCenter.default
         notiCenter.addObserver(self, selector: #selector(notiAction(_:)), name: NSNotification.Name(rawValue: "KeyName"), object: nil)
-        
     }
+    
     @objc func notiAction(_ noti: Notification) {
         let msg = noti.object as! String
+        
         data.append(msg)
         tableView.reloadData()
     }
@@ -32,7 +33,9 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.text = UserDefaults.standard.array(forKey: key)
+        
+        
         return cell
     }
 }
