@@ -40,14 +40,18 @@ func someFunction(structInstance: SomeStruct) {
 
 someFunction(structInstance: someStructInstance)
 print(someStructInstance.someProperty)
-print("----------------------------------------------------")
+
 var local: SomeStruct = SomeStruct()
-local.someProperty = "ABC"
+local.someProperty = "DEF"
 print(local.someProperty)
 
 var local1: SomeStruct = SomeStruct()
 local1.someProperty = "Changed?"
 print(local1.someProperty)
+
+var local2: SomeStruct = SomeStruct()
+local2.someProperty = "Property"
+print(someStructInstance.someProperty)
 
 print("----------------------------------------------------")
 class SomeClass {
@@ -55,6 +59,7 @@ class SomeClass {
 }
 
 var someClassInstance: SomeClass = SomeClass()
+print(someClassInstance.someProperty)
 
 func otherFunction(classInstance: SomeClass) {
     var mainVar: SomeClass = classInstance
@@ -63,8 +68,20 @@ func otherFunction(classInstance: SomeClass) {
 
 otherFunction(classInstance: someClassInstance)
 print(someClassInstance.someProperty)
+
 var mainVar1: SomeClass = SomeClass()
 mainVar1.someProperty = "one more time duplicated."
+print(someClassInstance.someProperty)
+
+var mainVar2: SomeClass = SomeClass()
+mainVar2.someProperty = "second try to test seeing duplicated."
+print(someClassInstance.someProperty)
+
+func someFunction(classInstance: SomeClass) {
+    var mainVar3: SomeClass = classInstance
+    mainVar3.someProperty = "Back to Original Property"
+}
+someFunction(classInstance: someClassInstance)
 print(someClassInstance.someProperty)
 
 
