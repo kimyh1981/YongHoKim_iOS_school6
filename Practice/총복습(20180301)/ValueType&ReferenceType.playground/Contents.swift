@@ -61,7 +61,7 @@ class SomeClass {
 var someClassInstance: SomeClass = SomeClass()
 print(someClassInstance.someProperty)
 
-func otherFunction(classInstance: SomeClass) {
+func otherFunction(classInstancae: SomeClass) {
     var mainVar: SomeClass = classInstance
     mainVar.someProperty = "Duplicated Property"
 }
