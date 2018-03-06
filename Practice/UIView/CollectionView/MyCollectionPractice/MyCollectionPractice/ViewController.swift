@@ -19,11 +19,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if section == 1 {
-            return 7
-        } else if section == 2 {
-            return 31
-        }
+//        if section == 1 {
+//            return 7
+//        } else if section == 2 {
+//            return 31
+//        }
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

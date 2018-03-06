@@ -26,6 +26,9 @@ var kim: Person = Person()
 kim.name = "Kim"
 kim.selfIntroduction()
 kim.sayHello()
+//Person.sayHello()
+Person.typeMethod()
+Person.classMethod()
 
 class Student: Person {
     var major: String = ""
