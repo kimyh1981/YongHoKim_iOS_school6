@@ -27,3 +27,8 @@ func printNumReversely(num: Int) {
 }
 printNumReversely(num: 7)
 
+func printStar(n: Int) {
+    for i in 1...n {
+        print("*" * i)
+    }
+}
