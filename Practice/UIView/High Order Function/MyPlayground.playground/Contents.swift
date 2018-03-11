@@ -92,12 +92,43 @@ print(f1)
 print(m2)
 print(f2)
 
+protocol Unit {
+    func attack()
+}
+class Marin: Unit {
+    func attack() {
+        print("마린이 공격을 시작합니다.")
+    }
+}
+class Ghost: Unit {
+    func attack() {
+        print("고스트가 공격을 시작합니다.")
+    }
+}
+class Medic: Unit {
+    func attack() {
+        print("메딕은 공격보다는 치료를 우선으로 합니다.")
+    }
+}
+enum UnitType {
+    case marin, medic, ghost
+}
+class Barraks {
+    func createUnit(type: UnitType) -> Unit {
+        switch type {
+        case .marin: return Marin()
+        case .medic: return Medic()
+        case .ghost: return Ghost()
+        }
+    }
+}
 
+let barraks = Barraks()
+let unit = barraks.createUnit(type: .marin)
 
-
-
-
-
+let barraks1 = Barraks()
+let unit1 = barraks1.createUnit(type: .medic)
+unit1.attack()
 
 
 
