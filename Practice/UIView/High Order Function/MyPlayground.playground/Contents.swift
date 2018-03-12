@@ -122,15 +122,17 @@ class Barraks {
         }
     }
 }
-
 let barraks = Barraks()
-let unit = barraks.createUnit(type: .marin)
 
-let barraks1 = Barraks()
-let unit1 = barraks1.createUnit(type: .medic)
+print("--------------------")
+let unit1 = barraks.createUnit(type: .medic)
 unit1.attack()
 
+let unit2 = barraks.createUnit(type: .ghost)
+unit2.attack()
 
+let unit3 = barraks.createUnit(type: .marin)
+unit3.attack()
 
-
-
+let marin = Marin()
+marin.attack()

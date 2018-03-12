@@ -27,8 +27,18 @@ func printNumReversely(num: Int) {
 }
 printNumReversely(num: 7)
 
-func printStar(n: Int) {
-    for i in 1...n {
-        print("*" * i)
+func printStarToRightSide(_ floors: Int) {
+    var blank: String = ""
+    var star: String = "*"
+    for floor in (3...floors).reversed() {
+        for _ in 3...floor {
+            blank += " "
+        }
+        print(blank + star)
+        star += "*"
+        blank = ""
     }
 }
+printStarToRightSide(5)
+
+
