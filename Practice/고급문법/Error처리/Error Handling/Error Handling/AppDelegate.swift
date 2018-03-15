@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TableView2
+//  Error Handling
 //
-//  Created by KimYong Ho on 2018. 2. 22..
+//  Created by KimYong Ho on 2018. 3. 15..
 //  Copyright © 2018년 KimYong Ho. All rights reserved.
 //
 
@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 
 }
