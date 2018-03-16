@@ -1,0 +1,7 @@
+target 'AlamofireSampleTest' do
+  use_frameworks!
+
+  # Pods for AlamofireSampleTest
+  pod 'Alamofire'
+
+end
