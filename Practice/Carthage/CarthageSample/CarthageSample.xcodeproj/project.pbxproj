@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7AC6E4C3205BAD7C00176668 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AC6E4C2205BAD7C00176668 /* Alamofire.framework */; };
 		7AF856C4205BA85E0080D1C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF856C3205BA85E0080D1C4 /* AppDelegate.swift */; };
 		7AF856C6205BA85E0080D1C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF856C5205BA85E0080D1C4 /* ViewController.swift */; };
 		7AF856C9205BA85E0080D1C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AF856C7205BA85E0080D1C4 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7AC6E4C2205BAD7C00176668 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		7AF856C0205BA85E0080D1C4 /* CarthageSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarthageSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AF856C3205BA85E0080D1C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AF856C5205BA85E0080D1C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,17 +31,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AC6E4C3205BAD7C00176668 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7AC6E4C1205BAD7C00176668 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AC6E4C2205BAD7C00176668 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7AF856B7205BA85E0080D1C4 = {
 			isa = PBXGroup;
 			children = (
 				7AF856C2205BA85E0080D1C4 /* CarthageSample */,
 				7AF856C1205BA85E0080D1C4 /* Products */,
+				7AC6E4C1205BAD7C00176668 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +86,7 @@
 				7AF856BC205BA85E0080D1C4 /* Sources */,
 				7AF856BD205BA85E0080D1C4 /* Frameworks */,
 				7AF856BE205BA85E0080D1C4 /* Resources */,
+				7AC6E4C4205BAD9400176668 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -130,6 +143,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7AC6E4C4205BAD9400176668 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7AF856BC205BA85E0080D1C4 /* Sources */ = {
@@ -275,6 +305,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67ZAZG66H9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YHKIM.CarthageSample;
@@ -289,6 +324,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 67ZAZG66H9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = CarthageSample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = YHKIM.CarthageSample;
