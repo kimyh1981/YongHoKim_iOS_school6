@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A53036B205ECA720077FD31 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A53036A205ECA720077FD31 /* AboutMeViewController.swift */; };
+		7A53036D205ECB730077FD31 /* myImg.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7A53036C205ECB720077FD31 /* myImg.jpeg */; };
+		7A53036F205ED2F10077FD31 /* KakaoTalk_Photo_2018-03-11-23-51-15_97.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7A53036E205ED2F10077FD31 /* KakaoTalk_Photo_2018-03-11-23-51-15_97.jpeg */; };
+		7A58F269205EC60D006D704B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A58F268205EC60D006D704B /* AboutViewController.swift */; };
 		7AAA059E205C9DE700F1F867 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA059D205C9DE700F1F867 /* AppDelegate.swift */; };
 		7AAA05A0205C9DE700F1F867 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AAA059F205C9DE700F1F867 /* ViewController.swift */; };
 		7AAA05A3205C9DE700F1F867 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AAA05A1205C9DE700F1F867 /* Main.storyboard */; };
 		7AAA05A5205C9DE700F1F867 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AAA05A4205C9DE700F1F867 /* Assets.xcassets */; };
 		7AAA05A8205C9DE700F1F867 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AAA05A6205C9DE700F1F867 /* LaunchScreen.storyboard */; };
+		7AF5F5B32061D95400824155 /* BullsEye.html in Resources */ = {isa = PBXBuildFile; fileRef = 7AF5F5B22061D95400824155 /* BullsEye.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A53036A205ECA720077FD31 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
+		7A53036C205ECB720077FD31 /* myImg.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = myImg.jpeg; sourceTree = "<group>"; };
+		7A53036E205ED2F10077FD31 /* KakaoTalk_Photo_2018-03-11-23-51-15_97.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "KakaoTalk_Photo_2018-03-11-23-51-15_97.jpeg"; sourceTree = "<group>"; };
+		7A58F268205EC60D006D704B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7AAA059A205C9DE700F1F867 /* PracticeWithUdemyCourseFrom20180317.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PracticeWithUdemyCourseFrom20180317.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AAA059D205C9DE700F1F867 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AAA059F205C9DE700F1F867 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +31,7 @@
 		7AAA05A4205C9DE700F1F867 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AAA05A7205C9DE700F1F867 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7AAA05A9205C9DE700F1F867 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AF5F5B22061D95400824155 /* BullsEye.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BullsEye.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +66,13 @@
 			children = (
 				7AAA059D205C9DE700F1F867 /* AppDelegate.swift */,
 				7AAA059F205C9DE700F1F867 /* ViewController.swift */,
+				7A58F268205EC60D006D704B /* AboutViewController.swift */,
+				7A53036A205ECA720077FD31 /* AboutMeViewController.swift */,
 				7AAA05A1205C9DE700F1F867 /* Main.storyboard */,
 				7AAA05A4205C9DE700F1F867 /* Assets.xcassets */,
+				7AF5F5B22061D95400824155 /* BullsEye.html */,
+				7A53036C205ECB720077FD31 /* myImg.jpeg */,
+				7A53036E205ED2F10077FD31 /* KakaoTalk_Photo_2018-03-11-23-51-15_97.jpeg */,
 				7AAA05A6205C9DE700F1F867 /* LaunchScreen.storyboard */,
 				7AAA05A9205C9DE700F1F867 /* Info.plist */,
 			);
@@ -124,8 +139,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7AAA05A8205C9DE700F1F867 /* LaunchScreen.storyboard in Resources */,
+				7AF5F5B32061D95400824155 /* BullsEye.html in Resources */,
+				7A53036D205ECB730077FD31 /* myImg.jpeg in Resources */,
 				7AAA05A5205C9DE700F1F867 /* Assets.xcassets in Resources */,
 				7AAA05A3205C9DE700F1F867 /* Main.storyboard in Resources */,
+				7A53036F205ED2F10077FD31 /* KakaoTalk_Photo_2018-03-11-23-51-15_97.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +154,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A58F269205EC60D006D704B /* AboutViewController.swift in Sources */,
 				7AAA05A0205C9DE700F1F867 /* ViewController.swift in Sources */,
+				7A53036B205ECA720077FD31 /* AboutMeViewController.swift in Sources */,
 				7AAA059E205C9DE700F1F867 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
