@@ -28,3 +28,9 @@ if a < b {
     min = b
 }
 min
+
+let c = 50
+let d = 10
+
+let minimum = c < d ? c : d
+minimum
