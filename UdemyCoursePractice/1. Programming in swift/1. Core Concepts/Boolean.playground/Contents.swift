@@ -17,10 +17,11 @@ let orFalse = 1 == 2 || 3 == 4
 let guess = "dog"
 let dogEqualsCat = guess == "cat"
 let order = "cat" < "dog"
+let order1 = "cat" > "dog"
 
 
 let a = 500
-let b = 10
+let b = 100
 let min: Int
 if a < b {
     min = a
@@ -34,3 +35,6 @@ let d = 10
 
 let minimum = c < d ? c : d
 minimum
+
+let minimum0 = a < b ? a : b
+

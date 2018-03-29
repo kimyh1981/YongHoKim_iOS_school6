@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JP5-j4-R3q">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tRm-gn-ZeP">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="Nhn-jJ-T4t" customClass="LoginViewController" customModule="KakaoTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Ic-pm-aep">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aE6-G1-lG1" customClass="KOLoginButton">
+                                <rect key="frame" x="10" y="563" width="355" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="355" id="kek-RE-yyT"/>
+                                    <constraint firstAttribute="height" constant="50" id="nqo-FI-BuN"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="kakaoLogin:" destination="Nhn-jJ-T4t" eventType="touchUpInside" id="1Qd-bF-Wln"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.99942404029999998" green="0.98555368190000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="1HO-vQ-hbK" firstAttribute="bottom" secondItem="aE6-G1-lG1" secondAttribute="bottom" constant="54" id="GTB-QK-P61"/>
+                            <constraint firstItem="1HO-vQ-hbK" firstAttribute="trailing" secondItem="aE6-G1-lG1" secondAttribute="trailing" constant="10" id="pLV-W7-DN0"/>
+                            <constraint firstItem="aE6-G1-lG1" firstAttribute="leading" secondItem="1HO-vQ-hbK" secondAttribute="leading" constant="10" id="r9R-O1-N9C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1HO-vQ-hbK"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="URi-xg-yla"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKJ-Jh-Vtp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1548" y="-522.18890554722645"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="oiq-NV-86a">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="QO7-sC-5Gb" customClass="MainViewController" customModule="KakaoTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jdr-q3-fGo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWm-lw-arH">
+                                <rect key="frame" x="143" y="591" width="88" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="logoutButtonDidTap:" destination="QO7-sC-5Gb" eventType="touchUpInside" id="ZrR-C0-iH2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qDZ-kh-iUt">
+                                <rect key="frame" x="16" y="298" width="343" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NickName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwp-q8-MMG">
+                                <rect key="frame" x="246.5" y="113" width="95.5" height="25.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1oM-bB-Vwp">
+                                <rect key="frame" x="16" y="113" width="215" height="168"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.83216959239999999" green="0.98548370600000001" blue="0.47333085539999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hlI-oJ-uQn" firstAttribute="trailing" secondItem="JWm-lw-arH" secondAttribute="trailing" constant="144" id="FrK-G9-JdS"/>
+                            <constraint firstItem="JWm-lw-arH" firstAttribute="leading" secondItem="hlI-oJ-uQn" secondAttribute="leading" constant="143" id="eiC-jc-mtb"/>
+                            <constraint firstItem="hlI-oJ-uQn" firstAttribute="bottom" secondItem="JWm-lw-arH" secondAttribute="bottom" constant="40" id="qZN-XL-nao"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hlI-oJ-uQn"/>
+                    </view>
+                    <connections>
+                        <outlet property="nickNameLable" destination="wwp-q8-MMG" id="rqI-hA-kAS"/>
+                        <outlet property="profileImageView" destination="qDZ-kh-iUt" id="rgm-qM-Ypt"/>
+                        <outlet property="thumbnailImageView" destination="1oM-bB-Vwp" id="jES-2N-6Jp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DZ1-eA-Ki4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2277.5999999999999" y="-521.28935532233891"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OvK-CJ-KmZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JP5-j4-R3q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hd4-li-aaS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Nhn-jJ-T4t" kind="relationship" relationship="rootViewController" id="ueh-24-Q7z"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9pC-cz-0Qe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="772" y="-522"/>
+        </scene>
+    </scenes>
+</document>
