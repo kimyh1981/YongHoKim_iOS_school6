@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class ListTableViewControllr: UIViewController {
     @IBOutlet weak var tableView: UITableView!
