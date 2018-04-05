@@ -8,26 +8,49 @@
 
 import Foundation
 
-struct Location {
-    let x: Int
-    let y: Int
-}
+//struct Location {
+//    let x: Int
+//    let y: Int
+//}
+//
+//struct DeliveryArea {
+//    let center: Location
+//    var radius: Double
+//
+//    func contatins(_ location: Location) -> Bool {
+//        let distanceToStore = distance(from: location, to: center)
+//        return distanceToStore < radius
+//    }
+//}
+//
+//let restaurant = DeliveryArea(center: Location(x: 2, y: 4), radius: 2.5)
+//let otherRestaurant = DeliveryArea(center: Location(x: 7, y: 8), radius: 1.5)
+//let restaurants = [restaurant, otherRestaurant]
+//
+//func distance(from source: Location, to target: Location) -> Double {
+//    let distanceX = Double(source.x - target.x)
+//    let distanceY = Double(source.y - target.y)
+//    return sqrt(distanceX * distanceY + distanceY + distanceY)
+//}
+//
+//func isInDeliveryRange(location: Location) -> Bool {
+//    for restaurant in restaurants {
+//        if restaurant.contatins(location) {
+//            return true
+//        }
+//    }
+//    return false
+//}
+//
+//isInDeliveryRange(location: Location(x: 3, y: 4))
+//isInDeliveryRange(location: Location(x: 5, y: 4))
+//isInDeliveryRange(location: Location(x: 8, y: 8))
 
-let restaurantLocation = Location(x: 2, y: 4)
-let restaurantRange = 1.5
+var a = 5
+var b = a
+var c = a
+print(a, b, c)
 
-func distance(from source: Location, to target: Location) -> Double {
-    let distanceX = Double(source.x - target.x)
-    let distanceY = Double(source.y - target.y)
-    return sqrt(distanceX * distanceY + distanceY + distanceY)
-}
-print(distance(from: (4, 5), to: (10, 15)))
-
-func isInDeliveryRange(location: (x: Int, y: Int)) -> Bool {
-    let deliveryDistance = distance(from: location, to: restaurantLocation)
-    return deliveryDistance < restaurantRange
-}
-
-print(isInDeliveryRange(location: (3, 4)))
-print(isInDeliveryRange(location: (5, 6)))
+a = 10
+print(a, b, c)
 
