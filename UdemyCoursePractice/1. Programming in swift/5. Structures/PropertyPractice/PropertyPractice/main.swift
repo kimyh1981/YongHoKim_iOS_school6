@@ -14,3 +14,7 @@ struct Person {
 }
 
 var person = Person(firstName: "YH", lastName: "Kim")
+person.firstName = "SH"
+let sh = person.firstName
+
+person.lastName = "Ahn"
