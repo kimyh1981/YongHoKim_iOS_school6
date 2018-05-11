@@ -11,16 +11,25 @@ import Foundation
 let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 struct SimpleDate {
     var month: String
+    var day: Int
+    
     init() {
         month = "Jan"
+        day = 1
     }
-    init(month: String) {
+    init(month: String, day: Int) {
         self.month = month
+        self.day = day
     }
+    mutating func advance() {
+        day += 1
+    }
+    
     func monthsUntilWinterBreak() -> Int {
-        return month.index(of: "Dec")! - month.index(of: month)
+        return month.index(of: "Dec")! - month.index(of: month)!
     }
 }
 
 let testDate = SimpleDate(month: "Feb")
 testDate.monthsUntilWinterBreak()
+testDate.advance()
