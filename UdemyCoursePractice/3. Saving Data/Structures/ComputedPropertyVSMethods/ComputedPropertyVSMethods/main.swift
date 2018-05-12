@@ -12,24 +12,44 @@ let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oc
 struct SimpleDate {
     var month: String
     var day: Int
+    static var firstDayOfMonth = 1
     
-    init() {
-        month = "Jan"
-        day = 1
-    }
-    init(month: String, day: Int) {
-        self.month = month
-        self.day = day
-    }
     mutating func advance() {
         day += 1
     }
     
     func monthsUntilWinterBreak() -> Int {
-        return month.index(of: "Dec")! - month.index(of: month)!
+        return months.index(of: "Dec")! - months.index(of: month)!
     }
 }
 
-let testDate = SimpleDate(month: "Feb")
-testDate.monthsUntilWinterBreak()
+extension SimpleDate {
+    init() {
+        month = "Jan"
+        day = 1
+    }
+}
+
+struct Math {
+    static func factorial(of number: Int) -> Int {
+        return (1...number).reduce(1) { result, number in
+            return result * number
+        }
+    }
+}
+print(Math.factorial(of: 5))
+
+extension Math {
+    static func length(x: Double, y: Double) -> Double {
+        return sqrt(x * x + y * y)
+    }
+}
+Math.length(x: 3, y: 4)
+
+var testDate = SimpleDate(month: "Feb", day: 22)
+print(testDate.monthsUntilWinterBreak()) //겨울 방학까지 남은 달 수
 testDate.advance()
+print(testDate)
+
+
+var otherDate = SimpleDate()
