@@ -61,8 +61,26 @@ lee.lists["Action"]?.movieTitle.append("Guadians of Galaxy")
 kim.lists["Action"]?.print()
 lee.lists["Action"]?.print()
 
-//Class or Struct which one will be proper to use?
-//TShirt : Struct
-//User : Class
-//Address : Struct
-//ShoppingCart : Class
+struct ListStruct {
+    let name: String
+    var movieTitle: [String] = []
+    
+    func print() {
+        Swift.print("Movie List: \(name)")
+        for movie in movieTitle {
+            Swift.print(movie)
+        }
+        Swift.print("\n")
+    }
+}
+
+struct UserStruct {
+    var lists: [String: ListStruct] = [:]
+    func addList(_ list: ListStruct) {
+        lists[list.name] = list
+    }
+    
+    func list(forName name: String) -> List? {
+        return lists[name]
+    }
+}
