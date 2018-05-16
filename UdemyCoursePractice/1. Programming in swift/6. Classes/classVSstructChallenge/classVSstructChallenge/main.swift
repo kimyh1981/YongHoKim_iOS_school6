@@ -76,11 +76,19 @@ struct ListStruct {
 
 struct UserStruct {
     var lists: [String: ListStruct] = [:]
-    func addList(_ list: ListStruct) {
+    mutating func addList(_ list: ListStruct) {
         lists[list.name] = list
     }
     
-    func list(forName name: String) -> List? {
+    func list(forName name: String) -> ListStruct? {
         return lists[name]
     }
 }
+var kim2 = UserStruct()
+var lee2 = UserStruct()
+var actionList2 = ListStruct(name: "Action", movieTitle: ["Avengers"])
+//var actionList3 = ListStruct(name: "History") // 파라미터 하나 빠지면 에러?
+
+kim2.addList(actionList2)
+kim2.lists["Action"]?.movieTitle.append("RoboCop")
+kim2.lists["Action"]?.print()
