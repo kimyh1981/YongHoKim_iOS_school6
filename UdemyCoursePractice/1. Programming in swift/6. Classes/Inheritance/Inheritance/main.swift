@@ -38,3 +38,44 @@ class Student: Person {
         grades.append(grade)
     }
 }
+
+let kim = Person(firstName: "YH", lastName: "Kim")
+let lee = Student(firstName: "SY", lastName: "Lee")
+print(kim.firstName)
+print(lee.firstName)
+
+let literature = Grade(letter: "A", points: 10, credits: 3)
+lee.recordGrade(literature)
+//kim.recordGrade(literature)
+
+class RockBandCrew: Student {
+    var minimumNumberOfMembers = 3
+}
+class Bass: RockBandCrew {
+    override var minimumNumberOfMembers: Int {
+        get {
+            return super.minimumNumberOfMembers * 2
+        }
+        set {
+            super.minimumNumberOfMembers = newValue / 2
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
