@@ -8,6 +8,11 @@
 
 import Foundation
 
+//struct Member {
+//    var firstName: String
+//    var lastName: String
+//}
+
 struct Grade {
     var letter: Character
     var points: Double
@@ -51,7 +56,7 @@ lee.recordGrade(literature)
 class RockBandCrew: Student {
     var minimumNumberOfMembers = 3
 }
-class Bass: RockBandCrew {
+class InstrumentPlayer: RockBandCrew {
     override var minimumNumberOfMembers: Int {
         get {
             return super.minimumNumberOfMembers * 2
@@ -62,20 +67,48 @@ class Bass: RockBandCrew {
     }
 }
 
+func phoneDirectory(_ person: Person) -> String {
+    return "\(person.lastName), \(person.firstName)"
+}
 
+let person = Person(firstName: "Leo", lastName: "Dicprio")
+let bassPlayer = InstrumentPlayer(firstName: "Marcus", lastName: "Miller")
+print(phoneDirectory(person))
+print(phoneDirectory(bassPlayer))
 
+var consolMixer = Student(firstName: "YR", lastName: "Kook")
+consolMixer = bassPlayer
+print((consolMixer as Student).firstName)
+print((bassPlayer as Student).firstName)
 
+consolMixer = lee
+let bassPlayer2 = consolMixer as? InstrumentPlayer
+if let bassPlayer2 = bassPlayer2 {
+    print(bassPlayer2.minimumNumberOfMembers)
+} else {
+    print("Not a bass player")
+}
+//print(bassPlayer2.minimumNumberOfMembers)
 
+class StudentMechanic: Student {
+    var droppedClasses: [Grade] = []
+    override func recordGrade(_ grade: Grade) {
+        if grade.letter == "F" {
+            droppedClasses.append(grade)
+        }
+    }
+    var isApplicableForDropOfSchool: Bool {
+        return droppedClasses.count == 4
+    }
+}
 
-
-
-
-
-
-
-
-
-
+var mechanic = StudentMechanic(firstName: "Machine", lastName: "Anderson")
+mechanic.recordGrade(Grade(letter: "F", points: 0, credits: 0))
+print(mechanic.isApplicableForDropOfSchool)
+mechanic.recordGrade(Grade(letter: "F", points: 0, credits: 0))
+mechanic.recordGrade(Grade(letter: "F", points: 0, credits: 0))
+mechanic.recordGrade(Grade(letter: "F", points: 0, credits: 0))
+print(mechanic.isApplicableForDropOfSchool)
 
 
 
