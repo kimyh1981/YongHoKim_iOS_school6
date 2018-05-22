@@ -75,6 +75,7 @@ var fSeries: BMW = BMW(["F700GS", "F800GS"], 200, "4StrockDirect2cylinder", 2, "
 var streetSeries: HarleyDavison = HarleyDavison(["USA", "Mexico"], "2Cylinder", 2, "OnRoad")
 
 print(fSeries.minimumSpeedRequired(200))
+print(fSeries.style)
 print(streetSeries.minimumSpeedRequired(90))
 print(streetSeries.enginSound(80, streetSeries.engine))
 print(streetSeries.origin)
