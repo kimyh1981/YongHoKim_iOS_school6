@@ -8,6 +8,9 @@
 
 import Foundation
 
+//이니셜라이저 다시 복습하기 : 번역 먼저 하고 다시 보기!
+
+
 struct Score {
     var letter: Character
     var points: Double
@@ -18,7 +21,7 @@ class Human {
     var firstName: String
     var lastName: String
     
-    init(firstName: String, lastName: String) {
+    required init(firstName: String, lastName: String) {
         self.firstName = firstName
         self.lastName = lastName
     }
@@ -26,6 +29,15 @@ class Human {
 
 class Student: Human {
     var scores: [Score] = []
+    
+    convenience init(trnsfer: Student) {
+        self.init(firstName: trnsfer.firstName, lastName: trnsfer.lastName)
+    }
+    
+    required init(firstName: String, lastName: String) {
+        super.init(firstName: firstName, lastName: lastName)
+    }
+    
     func recordScore(_ score: Score) {
         scores.append(score)
     }
@@ -34,8 +46,14 @@ class Student: Human {
 class ClubWinner: Student {
     var failedPart: [Score] = []
     var club: [String]
+    
     init(club: [String], firstName: String, lastName: String) {
         self.club = club
+        super.init(firstName: firstName, lastName: lastName)
+        recordScore(Score(letter: "P", points: 0, credits: 0))
+    }
+    required init(firstName: String, lastName: String) {
+        self.club = []
         super.init(firstName: firstName, lastName: lastName)
     }
     
@@ -45,6 +63,7 @@ class ClubWinner: Student {
             failedPart.append(score)
         }
     }
+    
     var isValid: Bool {
         return failedPart.count > 3
     }
