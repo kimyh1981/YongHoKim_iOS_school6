@@ -53,10 +53,10 @@
             </objects>
             <point key="canvasLocation" x="377" y="45"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add Item-->
         <scene sceneID="acl-r0-iYv">
             <objects>
-                <tableViewController id="Umx-DX-vuJ" sceneMemberID="viewController">
+                <tableViewController id="Umx-DX-vuJ" customClass="AddItemTableViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8dg-9D-AJR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,10 @@
                             <outlet property="delegate" destination="Umx-DX-vuJ" id="2vQ-4E-nPk"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Add Item" id="Wj9-5C-Biw">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="eMn-JK-E0a"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="qek-i3-VSr"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YF7-Ro-mVV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
