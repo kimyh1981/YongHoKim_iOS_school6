@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChecklistViewController: UITableViewController {
+class ChecklistViewController: UITableViewController, AddItemViewControllerDelegate {
     var items: [ChecklistItem]
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,6 +53,13 @@ class ChecklistViewController: UITableViewController {
         return items.count
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "AddItem" {
+            let controller = segue.destination as! AddItemViewController
+            controller.delegate = self
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Checklistsitem", for: indexPath)
         
@@ -77,6 +84,8 @@ class ChecklistViewController: UITableViewController {
         let indexPaths = [indexPath]
         tableView.deleteRows(at: indexPaths, with: .automatic)
     }
+    
+    
     func configureCheckmark(for cell: UITableViewCell, with item: ChecklistItem) {
         if item.checked {
             cell.accessoryType = .checkmark
@@ -101,6 +110,14 @@ class ChecklistViewController: UITableViewController {
         let indexPath = IndexPath(row: newRowIndex, section: 0)
         let indexPaths = [indexPath]
         tableView.insertRows(at: indexPaths, with: .automatic)
+    }
+    
+    func addItemViewControllerDidCancel(_ controller: AddItemViewController) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func addItemViewController(_ controller: AddItemViewController, didFinishAdding item: ChecklistItem) {
+        navigationController?.popViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {
