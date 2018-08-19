@@ -42,6 +42,9 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         
         super.init(coder: aDecoder)
         
+        print("Documents folder is \(documentsDirectory())")
+        print("Data file path is \(dataFilePath())")
+        
     }
 
 
@@ -98,7 +101,7 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         
         if item.checked {
             label.text = "√"
-        } else {
+        } else { 
             label.text = ""
         }
     }
@@ -131,6 +134,26 @@ class ChecklistViewController: UITableViewController, ItemDetailViewControllerDe
         }
         navigationController?.popViewController(animated: true)
     }
+    
+    func documentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    func dataFilePath() -> URL {
+        return documentsDirectory().appendingPathComponent("Checklists.plist")
+    }
+    
+    func saveChecklistItems() {
+        let encoder = PropertyListEncoder()
+        do {
+            let data = try encoder.encode(items)
+            try data.write(to: dataFi lePath(), options: Data.WritingOptions.atomic)
+        } catch {
+            print("Error encoding item array!")
+        }
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
